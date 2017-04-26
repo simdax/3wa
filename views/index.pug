@@ -1,0 +1,71 @@
+extends layout
+
+block content
+  //- #background1.fond
+  //- #background2.fond
+  .container
+    h1 Salut, 3WA man !
+    #titre
+      img(src="http://3.bp.blogspot.com/-sZ6XXzD7Onw/TxPefnmO5CI/AAAAAAAAAbw/x0s3ZeymF-g/s1600/01-20-12.jpg")
+      img(src="img/chuckNorris.png")
+      p.
+        "Alors, il paraît que tu veux poutrer du gros internet avec des gros hipsters réunis dans le 18eme arrondissement ?"
+    figure
+      img(src='http://www.deedeeparis.com/blog/wp-content/uploads/2015/05/brasserie-Barb%C3%A8s-7.jpg')
+      figcaption.badge Le monde merveilleux des hipsters
+    #dur.voixPeuple
+      | Mais c'est dur internet !!
+    #iframes
+      - n = 0
+      while n < 3
+        iframe(src="//giphy.com/embed/3o6ZtecXpGSMOB0iQg?hideSocial=true" width="250" height="268.8" frameBorder="0")
+        iframe(src="//giphy.com/embed/3oz8xHpIFb5NO2Exl6?hideSocial=true" width="250" height="264" frameBorder="0")
+        #appear 
+        - n++
+    big casse l'âne tienne, stéphane !
+    P.
+      La 3WA te permet de partager tes peines, tes douleurs, et tes désirs !
+    #list
+      ul
+        ul
+          li Le design
+          li (ce site)
+        ul
+          li Le code
+          li Les codes
+          li La vie
+        ul 
+          li Les copéins
+          li (ça oublie, on pourra rien faire pour toi)
+    big.
+      Le monde merveilleux des entreprises mi de droite, mi de gauche, te présente le dernier-né des outils collaboratifs les plus oufs du monde :
+    #svg
+      p BAM
+      img(src="https://cdn.worldvectorlogo.com/logos/slack-1.svg")
+    .voixPeuple
+      | Trop IZI!
+    p.
+      Mais attention !!!!
+    p 
+      | Le succès de cet outil si apolitique en ces temps si troubles ne dépend
+      #color que de toi !!
+    p Il va falloir
+    ul
+      li le feeder
+      li le remplir
+      li le nourrir
+      li mettre des trucs dedans
+      li croire en toi-même
+    p
+      | rendez-vous sur ce lien de ouf
+      | =>
+      a(href="https://3wa-paris.slack.com") lien de ouf
+      | <=
+  //-   #italic
+  //-     ul
+  //-       li ouahou ! Mais c'est trop sympa !
+  //-       li peut-être...
+  //-       li Mais elle pue ta page vébe...
+  //-     iframe(src="//giphy.com/embed/3oz8xwe58LUdJgOPh6" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen)
+  //- script(src="http://css-tricks.com/examples/BlurredText/js/jquery.lettering.js")
+  //- script(src="javascripts/index.js")

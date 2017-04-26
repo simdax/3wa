@@ -1,0 +1,422 @@
+.badge {
+  position: relative;
+  width: 400px;
+  border-radius: 50%;
+  transform: rotate(-85deg); }
+
+span {
+  font-size: 25px;
+  font-family: 'Press Start 2P';
+  height: 300px;
+  position: absolute;
+  left: 448px;
+  top: -330px;
+  transform-origin: bottom center; }
+
+.char1 {
+  transform: rotate(5deg); }
+
+.char2 {
+  transform: rotate(10deg); }
+
+.char3 {
+  transform: rotate(15deg); }
+
+.char4 {
+  transform: rotate(20deg); }
+
+.char5 {
+  transform: rotate(25deg); }
+
+.char6 {
+  transform: rotate(30deg); }
+
+.char7 {
+  transform: rotate(35deg); }
+
+.char8 {
+  transform: rotate(40deg); }
+
+.char9 {
+  transform: rotate(45deg); }
+
+.char10 {
+  transform: rotate(50deg); }
+
+.char11 {
+  transform: rotate(55deg); }
+
+.char12 {
+  transform: rotate(60deg); }
+
+.char13 {
+  transform: rotate(65deg); }
+
+.char14 {
+  transform: rotate(70deg); }
+
+.char15 {
+  transform: rotate(75deg); }
+
+.char16 {
+  transform: rotate(80deg); }
+
+.char17 {
+  transform: rotate(85deg); }
+
+.char18 {
+  transform: rotate(90deg); }
+
+.char19 {
+  transform: rotate(95deg); }
+
+.char20 {
+  transform: rotate(100deg); }
+
+.char21 {
+  transform: rotate(105deg); }
+
+.char22 {
+  transform: rotate(110deg); }
+
+.char23 {
+  transform: rotate(115deg); }
+
+.char24 {
+  transform: rotate(120deg); }
+
+.char25 {
+  transform: rotate(125deg); }
+
+.char26 {
+  transform: rotate(130deg); }
+
+.char27 {
+  transform: rotate(135deg); }
+
+.char28 {
+  transform: rotate(140deg); }
+
+.char29 {
+  transform: rotate(145deg); }
+
+.char30 {
+  transform: rotate(150deg); }
+
+.char31 {
+  transform: rotate(155deg); }
+
+.char32 {
+  transform: rotate(160deg); }
+
+.char33 {
+  transform: rotate(165deg); }
+
+.char34 {
+  transform: rotate(170deg); }
+
+.char35 {
+  transform: rotate(175deg); }
+
+.char36 {
+  transform: rotate(180deg); }
+
+.char37 {
+  transform: rotate(185deg); }
+
+.char38 {
+  transform: rotate(190deg); }
+
+.char39 {
+  transform: rotate(195deg); }
+
+.char40 {
+  transform: rotate(200deg); }
+
+.char41 {
+  transform: rotate(205deg); }
+
+.char42 {
+  transform: rotate(210deg); }
+
+.char43 {
+  transform: rotate(215deg); }
+
+.char44 {
+  transform: rotate(220deg); }
+
+.char45 {
+  transform: rotate(225deg); }
+
+.char46 {
+  transform: rotate(230deg); }
+
+.char47 {
+  transform: rotate(235deg); }
+
+.char48 {
+  transform: rotate(240deg); }
+
+.char49 {
+  transform: rotate(245deg); }
+
+.char50 {
+  transform: rotate(250deg); }
+
+.char51 {
+  transform: rotate(255deg); }
+
+.char52 {
+  transform: rotate(260deg); }
+
+.char53 {
+  transform: rotate(265deg); }
+
+.char54 {
+  transform: rotate(270deg); }
+
+.char55 {
+  transform: rotate(275deg); }
+
+.char56 {
+  transform: rotate(280deg); }
+
+.char57 {
+  transform: rotate(285deg); }
+
+.char58 {
+  transform: rotate(290deg); }
+
+.char59 {
+  transform: rotate(295deg); }
+
+.char60 {
+  transform: rotate(300deg); }
+
+.char61 {
+  transform: rotate(305deg); }
+
+.char62 {
+  transform: rotate(310deg); }
+
+.char63 {
+  transform: rotate(315deg); }
+
+.char64 {
+  transform: rotate(320deg); }
+
+.char65 {
+  transform: rotate(325deg); }
+
+.char66 {
+  transform: rotate(330deg); }
+
+.char67 {
+  transform: rotate(335deg); }
+
+.char68 {
+  transform: rotate(340deg); }
+
+.char69 {
+  transform: rotate(345deg); }
+
+.char70 {
+  transform: rotate(350deg); }
+
+.char71 {
+  transform: rotate(355deg); }
+
+.char72 {
+  transform: rotate(360deg); }
+
+.char73 {
+  transform: rotate(365deg); }
+
+.char74 {
+  transform: rotate(370deg); }
+
+.char75 {
+  transform: rotate(375deg); }
+
+.char76 {
+  transform: rotate(380deg); }
+
+.char77 {
+  transform: rotate(385deg); }
+
+.char78 {
+  transform: rotate(390deg); }
+
+.char79 {
+  transform: rotate(395deg); }
+
+.char80 {
+  transform: rotate(400deg); }
+
+.char81 {
+  transform: rotate(405deg); }
+
+.char82 {
+  transform: rotate(410deg); }
+
+.char83 {
+  transform: rotate(415deg); }
+
+.char84 {
+  transform: rotate(420deg); }
+
+.char85 {
+  transform: rotate(425deg); }
+
+.char86 {
+  transform: rotate(430deg); }
+
+.char87 {
+  transform: rotate(435deg); }
+
+.char88 {
+  transform: rotate(440deg); }
+
+.char89 {
+  transform: rotate(445deg); }
+
+.char90 {
+  transform: rotate(450deg); }
+
+.char91 {
+  transform: rotate(455deg); }
+
+.char92 {
+  transform: rotate(460deg); }
+
+.char93 {
+  transform: rotate(465deg); }
+
+.char94 {
+  transform: rotate(470deg); }
+
+.char95 {
+  transform: rotate(475deg); }
+
+.char96 {
+  transform: rotate(480deg); }
+
+.char97 {
+  transform: rotate(485deg); }
+
+.char98 {
+  transform: rotate(490deg); }
+
+.char99 {
+  transform: rotate(495deg); }
+
+.char100 {
+  transform: rotate(500deg); }
+
+body {
+  background-color: rgba(150, 30, 30, 0.5);
+  color: green;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem; }
+
+img {
+  max-width: 80%; }
+
+.container {
+  width: 80%;
+  margin: auto; }
+
+h1 {
+  text-align: center;
+  margin-bottom: 300px;
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 6em;
+  color: #0d730d; }
+
+#titre {
+  overflow: hidden;
+  margin-bottom: 500px;
+  position: relative; }
+  #titre p {
+    padding-top: 100px;
+    font-style: italic; }
+  #titre img:nth-of-type(1) {
+    width: 7%;
+    position: absolute;
+    left: 565px; }
+  #titre img:nth-of-type(2) {
+    width: 40%;
+    float: right;
+    display: inline-block; }
+
+figure {
+  margin-bottom: 500px; }
+  figure * {
+    display: block;
+    margin: auto; }
+  figure figcaption {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 10px;
+    font-size: 0.5em; }
+  figure img {
+    text-align: center;
+    border-radius: 50%;
+    width: 50%;
+    margin-top: 150px;
+    margin-bottom: 150px; }
+
+a:hover {
+  font-size: 3em;
+  color: red; }
+
+.voixPeuple {
+  color: blue;
+  font-size: 4rem; }
+
+#color {
+  color: white;
+  font-size: 3rem;
+  text-align: center; }
+
+@keyframes bob {
+  0% {
+    size: 0; }
+  100% {
+    size: 100%; } }
+
+#appear {
+  animation-name: bob;
+  animation-duration: 1s; }
+
+#svg {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  position: relative; }
+  #svg img {
+    width: 80%; }
+  #svg p {
+    position: absolute;
+    color: red;
+    font-size: 20rem;
+    top: 20px;
+    right: 50px;
+    z-index: 1;
+    text-shadow: 0 0 20px white; }
+
+.fond {
+  position: absolute;
+  width: 100%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  z-index: -2; }
+
+#background1 {
+  background-image: url(https://3wa.fr/wp-content/themes/3wa2015/img/logos/big.png); }
+
+#background2 {
+  background-color: rgba(200, 200, 200, 0.85);
+  z-index: -1; }
+
+#italic {
+  margin-top: 500px; }

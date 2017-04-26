@@ -1,0 +1,20 @@
+.badge 
+  position: relative
+  width: 400px
+  border-radius: 50%
+  transform: rotate(-85deg)
+
+span 
+  font-size: 25px
+  font-family: 'Press Start 2P'
+  // ## Monaco, MonoSpace
+  height: 300px
+  position: absolute
+  left: 448px;
+  top: -330px;
+  transform-origin: bottom center
+
+
+@for $i from 1 through 100 
+  .char#{$i} 
+    transform: rotate(($i*5)+deg)

@@ -1,0 +1,117 @@
+
+$bgcolor: rgba(150,30,30,0.5)
+$mainColor: green
+
+@import '_badge.sass'
+@import '_iframe.sass'
+
+body
+  background-color: $bgcolor
+  color: $mainColor
+  font-family: 'Oswald', sans-serif
+  font-size: 1.2rem
+
+
+img
+  max-width: 80%
+
+.container
+  width: 80%
+  margin: auto
+
+h1
+  text-align: center
+  margin-bottom: 300px 
+  font-family: 'Mukta Vaani', sans-serif
+  font-size: 6em
+  color: desaturate($mainColor, 20)   
+
+#titre
+  overflow: hidden
+  margin-bottom: 500px
+  position: relative
+  p
+    padding-top: 100px
+    font-style: italic 
+  img:nth-of-type(1)
+    width: 7%
+    position: absolute
+    left: 565px;
+  img:nth-of-type(2)
+    width: 40%
+    float: right
+    display: inline-block
+
+figure
+  margin-bottom: 500px
+  *
+    display: block
+    margin: auto    
+  figcaption
+    color: white
+    font-family: 'Press Start 2P', cursive
+    margin-top: 10px
+    font-size: 0.5em
+  img
+    text-align: center
+    border-radius: 50%
+    width: 50%
+    margin-top: 150px
+    margin-bottom: 150px
+
+
+a:hover
+  font-size: 3em
+  color: red
+
+
+.voixPeuple
+  color: blue
+  font-size: 4rem
+
+#color
+  color: white
+  font-size: 3rem
+  text-align: center
+
+@keyframes bob
+  0%
+    size: 0
+  100%
+    size: 100%
+
+#appear
+  animation-name: bob
+  animation-duration: 1s
+
+#svg
+  margin-top: 200px
+  margin-bottom: 200px
+  position : relative
+  img
+    width: 80%
+  p
+    position: absolute  
+    color: red 
+    font-size: 20rem
+    top : 20px
+    right: 50px
+    z-index : 1
+    text-shadow: 0 0 20px white
+
+.fond
+  position: absolute
+  width: 100%
+  background-size: 50%
+  background-repeat: no-repeat
+  z-index : -2
+
+#background1
+  background-image: url(https://3wa.fr/wp-content/themes/3wa2015/img/logos/big.png)
+#background2
+  background-color: rgba(200,200,200,0.85)
+  z-index: -1
+
+
+#italic
+  margin-top: 500px
