@@ -1,13 +1,23 @@
+
 doctype html
 html
   head
     title= title
     link(rel='stylesheet', href="https://unpkg.com/normalize.css")
-    link(rel='stylesheet', href='/stylesheets/final/main.css') 
     link(href="https://fonts.googleapis.com/css?family=Oswald|Press+Start+2P|Mukta+Vaani" rel="stylesheet")
+    //- link(rel='stylesheet', href="vendor/bootstrap/dist/css/bootstrap.min.css")
+    link(rel='stylesheet', href='/stylesheets/final/main.css') 
     //- script(src="vendor/jquery/dist/jquery.min.js")
     script(src="https://unpkg.com/jquery@3.2.1")
+    script(src="vendor/bootstrap/dist/js/bootstrap.js")
+    script(src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js")
+
   body
+    //- .navbar.navbar-default
+    //-   .nav.navbar-nav
+    //-     ul 
+    //-       li coucou
+    //-       li coucou
     block content
     script(src="http://css-tricks.com/examples/BlurredText/js/jquery.lettering.js")
     script(src="javascripts/index.js")

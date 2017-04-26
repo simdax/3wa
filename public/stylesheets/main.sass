@@ -4,8 +4,15 @@ $mainColor: green
 
 @import '_badge.sass'
 @import '_iframe.sass'
+@import '_background.sass'
+@import '_lists.sass'
+
+
 
 body
+  height: 100%
+  margin: 0
+  margin-top: -78px
   background-color: $bgcolor
   color: $mainColor
   font-family: 'Oswald', sans-serif
@@ -21,12 +28,14 @@ img
 
 h1
   text-align: center
+  // margin-top: 150px 
   margin-bottom: 300px 
   font-family: 'Mukta Vaani', sans-serif
   font-size: 6em
   color: desaturate($mainColor, 20)   
 
 #titre
+  // display: flex
   overflow: hidden
   margin-bottom: 500px
   position: relative
@@ -44,18 +53,21 @@ h1
 
 figure
   margin-bottom: 500px
-  *
-    display: block
-    margin: auto    
+  margin-left: 50%
+  // *
+  //   display: block
+  //   margin: auto    
   figcaption
     color: white
     font-family: 'Press Start 2P', cursive
     margin-top: 10px
     font-size: 0.5em
   img
+    display: block
     text-align: center
     border-radius: 50%
-    width: 50%
+    max-width: 150%
+    width: 100%   
     margin-top: 150px
     margin-bottom: 150px
 
@@ -66,6 +78,7 @@ a:hover
 
 
 .voixPeuple
+  text-align: right
   color: blue
   font-size: 4rem
 
@@ -98,19 +111,6 @@ a:hover
     right: 50px
     z-index : 1
     text-shadow: 0 0 20px white
-
-.fond
-  position: absolute
-  width: 100%
-  background-size: 50%
-  background-repeat: no-repeat
-  z-index : -2
-
-#background1
-  background-image: url(https://3wa.fr/wp-content/themes/3wa2015/img/logos/big.png)
-#background2
-  background-color: rgba(200,200,200,0.85)
-  z-index: -1
 
 
 #italic
