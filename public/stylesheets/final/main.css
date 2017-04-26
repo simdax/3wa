@@ -9,8 +9,8 @@ span {
   font-family: 'Press Start 2P';
   height: 300px;
   position: absolute;
-  left: 448px;
-  top: -330px;
+  left: 412px;
+  top: -305px;
   transform-origin: bottom center; }
 
 .char1 {
@@ -338,10 +338,10 @@ iframe:nth-of-type(2) {
   background-color: rgba(255, 255, 255, 0.45); }
 
 ul:nth-of-type($i) li {
-  color: #f896b0; }
+  color: #328b83; }
 
 ul:nth-of-type($i) li {
-  color: #df6860; }
+  color: #9ebb68; }
 
 form {
   width: 100%;
@@ -360,6 +360,9 @@ body {
   color: green;
   font-family: 'Oswald', sans-serif;
   font-size: 1.2rem; }
+
+a {
+  text-decoration: none; }
 
 img {
   max-width: 80%; }
@@ -380,7 +383,7 @@ h1 {
   margin-bottom: 500px;
   position: relative; }
   #titre p {
-    padding-top: 100px;
+    padding-top: 40px;
     font-style: italic; }
   #titre img:nth-of-type(1) {
     width: 7%;
@@ -409,24 +412,23 @@ figure {
     margin-bottom: 150px; }
 
 a:hover {
-  font-size: 3em;
   color: red; }
 
 .voixPeuple {
   text-align: right;
   color: blue;
-  font-size: 4rem; }
+  font-size: 3.8rem; }
 
 #color {
-  color: white;
+  margin: 40px auto;
+  padding: 10px;
+  width: 30%;
+  display: inline-block;
+  border-radius: 20px;
   font-size: 3rem;
   text-align: center; }
-
-@keyframes bob {
-  0% {
-    size: 0; }
-  100% {
-    size: 100%; } }
+  #color a {
+    color: white; }
 
 #appear {
   animation-name: bob;
@@ -438,9 +440,15 @@ a:hover {
   position: relative; }
   #svg img {
     width: 80%; }
+  #svg a {
+    color: red;
+    font-style: none;
+    transition-duration: 0.2s; }
+    #svg a:hover {
+      transition-duration: 1s;
+      text-shadow: 0 0 40px yellow; }
   #svg p {
     position: absolute;
-    color: red;
     font-size: 20rem;
     top: 20px;
     right: 50px;
@@ -451,4 +459,5 @@ a:hover {
   margin-top: 500px; }
 
 p:last-child {
-  margin-bottom: 200px; }
+  text-align: center;
+  margin: 100px auto; }

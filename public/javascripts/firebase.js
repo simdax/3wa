@@ -10,11 +10,21 @@
   };
   firebase.initializeApp(config);
 
-function submitForm(e) {
-  e.preventDefault();
-  var name = $('input[type="text"]').val();
-  var mail = $('input[type="mail"]').val();
-  console.log(name);
-//  firebase. fait des trucs
-}
+  function submitForm(e) {
+    e.preventDefault();
+
+    var name = $('input[type="text"]').val();
+    var mail = $('input[type="mail"]').val();
+    
+    password = "riendutout";
+
+    firebase.auth().createUserWithEmailAndPassword(mail, password).catch(function(error) {
+  // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage); 
+  // ...
+  })
+  }
 
