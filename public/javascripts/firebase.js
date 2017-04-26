@@ -19,12 +19,22 @@
     password = "riendutout";
 
     firebase.auth().createUserWithEmailAndPassword(mail, password).catch(function(error) {
-  // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage); 
-  // ...
-  })
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage); 
+
+        var user = firebase.auth().currentUser;
+
+        user.sendEmailVerification().then(function() {
+          console.log("email sent");
+        // Email sent.
+      }, function(error) {
+        // An error happened.
+      });
+    });
+
+
   }
 
