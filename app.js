@@ -50,19 +50,13 @@ app.post("/newFile", function(req, res){
       console.log(err);
     });
   }
-  // res.render('upload', {success:true})
   res.redirect("/users");
-  // res.writeHead(301,
-  //     {Location: 'http://localhost:3000/'+users}
-  //   );
-  // res.end();
 })
 
 // var browserSync = require('browser-sync');
 // var bs = browserSync.create()
 // .init({
 //  logSnippet: false,
-//  watch: "views/* public/*"
 // });
 // app.use(require('connect-browser-sync')(bs));
  
