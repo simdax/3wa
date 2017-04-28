@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  form(action="newFile", method="post", enctype="multipart/form-data")
+    label(for="css") CSS
+    input(type="file", id="css", name="css")
+    label(for="css") HTML
+    input(type="file", id="html", name="html")
+    label(for="css") JAVASCRIPT
+    input(type="file", id="js", name="js")
+    input(type="submit")
