@@ -12,35 +12,6 @@ var config = {
   };
 firebase.initializeApp(config);
 
-  // function submitForm(e) {
-  //   e.preventDefault();
-
-  //   var name = $('input[type="text"]').val();
-  //   var mail = $('input[type="mail"]').val();
-    
-  //   password = "riendutout";
-
-  //   firebase.auth().createUserWithEmailAndPassword(mail, password).catch(function(error) {
-  //       // Handle Errors here.
-  //       var errorCode = error.code;
-  //       var errorMessage = error.message;
-  //       console.log(errorCode);
-  //       console.log(errorMessage); 
-
-  //       var user = firebase.auth().currentUser;
-
-  //       user.sendEmailVerification().then(function() {
-  //         console.log("email sent");
-  //       // Email sent.
-  //     }, function(error) {
-  //       // An error happened.
-  //     });
-  //   });
-
-
-  // }
-
-
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -50,8 +21,39 @@ router.get('/upload', function (req,res) {
   res.render("upload", { success:null, name: "stranger" });
 })
 
-router.post('/inscription', function(res, req) {
-	console.log(req.body);
+router.post('/signUp', function(req, res) {
+
+  var nom =  req.body.nom;
+  var mail =  req.body.mail;
+
+  // create user
+  firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function() {
+      var user = firebase.auth().currentUser;
+      user.updateProfile({
+        displayName: nom
+      }).then(function() {
+        console.log(user.displayName);
+      });
+      user.sendEmailVerification().then(function() {
+        console.log("email sent");
+      },function(err) { console.log("error : "+err);});
+  });
+
+
 })
+
+router.post("/signIn", function(req, res) {      
+  var mail = req.body.mail;
+
+  firebase.auth().signInWithEmailAndPassword(mail, "pasdepass").then(function() {
+    var user = firebase.auth().currentUser;
+    res.render('upload', {name:user.displayName})
+  },
+    function(err) {
+     var errorCode = err.code;
+     var msg = err.message;
+     res.send('bon alors ?')
+  });
+ })
 
 module.exports = router;

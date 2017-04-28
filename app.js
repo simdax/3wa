@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 
 var fileupload = require('express-fileupload');
 var fs = require('fs');
-// var firebase = require('firebase');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -22,7 +21,7 @@ app.set('view engine', 'pug');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 
 // file uploading
@@ -62,6 +61,8 @@ app.post("/newFile", function(req, res){
  
 
 // require('./mysql.js');
+require('./routes/firebase.js');
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/users", express.static(path.join(__dirname, 'uploads')));
 app.use('/', index);
