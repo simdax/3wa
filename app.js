@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var fileupload = require('express-fileupload');
+var fs = require('fs');
 // var firebase = require('firebase');
 
 var index = require('./routes/index');
@@ -29,7 +30,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(fileupload());
 app.post("/newFile", function(req, res){
-  console.log(req.files);
+  console.log(req.files.css);
+  // var file =     var imageBuffer = decodeBase64Image(req.files.file);
+  fs.writeFile("public/uploads/io.txt", req.files.css.data, function (err) {
+    console.log("coucou");
+    if(err){    res.send("file not written !") }
+    res.send("file written !")
+  });
 })
 
 app.use('/', index);
