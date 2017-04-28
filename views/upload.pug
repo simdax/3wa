@@ -3,39 +3,51 @@ extends layout
 block content
   
   #intro
-    h1 OK, _ ${name} _
-    :markdown-it
-        Alors, il paraîtrait que tu voudrais écrire du gros code pour les copéins?
+    h1 OK, #{name}
+    if name == "stranger"
+      p.
+        déjà, mon grand, il va falloir que t'apprennes qu'ici, on commence par se présenter, et là où qu'on se présente, c'est à l'entrée =>
+      a(href='/') all right ?
+    else
+      :markdown-it
+          Alors, il paraîtrait que tu voudrais écrire du gros code pour les copéins?
 
-        C'est bien, ça, les copéins...
+          C'est bien, ça, les copéins...
 
-        Bon, alors, c'est pas troooooooop, trop compliqué.
-        On n'a que deux règles dans le métier, et on commence par la fin.
+          Bon, alors, c'est pas troooooooop, trop compliqué.
+          On n'a que deux règles dans le métier, et on commence par la fin.
 
-        ## règle n°2 :
-            Ton h t m l , il doit s'appeler "index". C'est comme ça chez nous.
-            Si il s'appelle pas index, et bien, tu peux passer directement à la golden rule =>
+          ## règle n°2 :
+            Les noms, c'est nous qu'on décide.
+            Il paraîtrait qu'il faut faire des appels internes et tout un tas de trucs très complexes que moi je maîtrise évidemment, et tout ça il faut que ça ait des noms cohérents et tout, tu vois, sinon, c'est le chaos, et nous, on n'aime pas trop les chaotiques dans la région...
+            Du coup, on a décidé, après moult et moult, que tes fichiers tu dois les appeller comme suit :
 
-        ## règle n°1 :
+            + ton C S S, il *doit* s'appeler __style__
+            + et ton J S, il *va s'appeler* __main__ !
+
+            Si tu respectes pas ça, fiston, et bien, tu peux passer directement à la golden rule suivaaaante
+
+          ## règle n°1 :
             Si ça marche pas, ça marche pas...
-            Tu pourras t'en prendre qu'à toi-même, patron !
+            Tu pourras t'en prendre qu'à toi-même !
 
-        Si t'acceptes ça, fiston, on peut discuter. Alors, balance tes fichiers d'amour dans le chtio panel en bas de page qu'on a t'a concocté, moi et mes copéins à moi, et va directement sur ta belle papage pour voir al résult.
+          Mais si t'acceptes ça, fiston, on peut discuter. Alors, balance tes fichiers d'amour dans le chtio panel en bas de page qu'on a t'a concocté, moi et mes copéins à moi, et va directement sur ta belle papage pour voir al résult.
 
-        Si t'en es pas content, tu pourras la modifier comme un guedin en revenant ici, et en réuploadant des fichiers.
+          Si t'en es pas content, tu pourras la modifier comme un guedin en revenant ici, et en réuploadant des fichiers.
 
 
   if success
     img(src="http://az616578.vo.msecnd.net/files/2016/06/10/636011804533596877279417241_o-SUCCESS-facebook-3.jpg", alt="Putain, il est des nôtres !!!!")  
 
-  #newfile
-    form(action="newFile", method="post", enctype="multipart/form-data")
-      #buttons
-        label(for="css") CSS
-        input(type="file", id="css", name="css")
-        label(for="css") HTML
-        input(type="file", id="html", name="html")
-        label(for="css") JAVASCRIPT
-        input(type="file", id="js", name="js")
-      #ok
-        input(type="submit" value="vazi, fiston, c'est ton heure de gloire !")
+  if name != "stranger"
+    #newfile
+      form(action="newFile", method="post", enctype="multipart/form-data")
+        #buttons
+          label(for="css") HTML
+          input(type="file", id="html", name="html")
+          label(for="css") CSS
+          input(type="file", id="css", name="css")
+          label(for="css") JAVASCRIPT
+          input(type="file", id="js", name="js")
+        #ok
+          input(type="submit" value="vazi, fiston, c'est ton heure de gloire !")

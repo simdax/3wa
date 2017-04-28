@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/upload', function (req,res) {
-  res.render("upload", {success:null, name:"stranger"});
+  res.render("upload", { success:null, name: "stranger" });
 })
 
 module.exports = router;

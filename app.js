@@ -29,13 +29,37 @@ app.use(cookieParser());
 
 app.use(fileupload());
 app.post("/newFile", function(req, res){
-  fs.writeFile("uploads/style.css", req.files.css.data, function (err) {
-    if(err){ res.send("file not written !" + err) }
-    res.render('upload', {success:true})
-  });
+
+  console.log(req.files);
+
+  if(req.files.html){  
+    console.log("processing html");
+    fs.writeFile("uploads/index.html", req.files.html.data, function (err) {
+      console.log(err);
+    });
+  }
+  if(req.files.css){  
+        console.log("processing css");
+    fs.writeFile("uploads/style.css", req.files.css.data, function (err) {
+      console.log(err);
+    });
+  }
+  if(req.files.js){  
+        console.log("processing js");
+    fs.writeFile("uploads/main.js", req.files.js.data, function (err) {
+      console.log(err);
+    });
+  }
+  // res.render('upload', {success:true})
+  res.redirect("/users");
+  // res.writeHead(301,
+  //     {Location: 'http://localhost:3000/'+users}
+  //   );
+  // res.end();
 })
 
 // require('./mysql.js');
+app.use(express.static(path.join(__dirname, 'public')));
 app.use("/users", express.static(path.join(__dirname, 'uploads')));
 app.use('/', index);
 // app.use('/users', users);
