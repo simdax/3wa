@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var multer = require("multer");
 
 
 router.get('/', function(req, res, next) {
