@@ -58,6 +58,15 @@ app.post("/newFile", function(req, res){
   // res.end();
 })
 
+// var browserSync = require('browser-sync');
+// var bs = browserSync.create()
+// .init({
+//  logSnippet: false,
+//  watch: "views/* public/*"
+// });
+// app.use(require('connect-browser-sync')(bs));
+ 
+
 // require('./mysql.js');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/users", express.static(path.join(__dirname, 'uploads')));
