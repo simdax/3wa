@@ -1,11 +1,41 @@
 extends layout
 
 block content
-  form(action="newFile", method="post", enctype="multipart/form-data")
-    label(for="css") CSS
-    input(type="file", id="css", name="css")
-    label(for="css") HTML
-    input(type="file", id="html", name="html")
-    label(for="css") JAVASCRIPT
-    input(type="file", id="js", name="js")
-    input(type="submit")
+  
+  #intro
+    h1 OK, _ ${name} _
+    :markdown-it
+        Alors, il paraîtrait que tu voudrais écrire du gros code pour les copéins?
+
+        C'est bien, ça, les copéins...
+
+        Bon, alors, c'est pas troooooooop, trop compliqué.
+        On n'a que deux règles dans le métier, et on commence par la fin.
+
+        ## règle n°2 :
+            Ton h t m l , il doit s'appeler "index". C'est comme ça chez nous.
+            Si il s'appelle pas index, et bien, tu peux passer directement à la golden rule =>
+
+        ## règle n°1 :
+            Si ça marche pas, ça marche pas...
+            Tu pourras t'en prendre qu'à toi-même, patron !
+
+        Si t'acceptes ça, fiston, on peut discuter. Alors, balance tes fichiers d'amour dans le chtio panel en bas de page qu'on a t'a concocté, moi et mes copéins à moi, et va directement sur ta belle papage pour voir al résult.
+
+        Si t'en es pas content, tu pourras la modifier comme un guedin en revenant ici, et en réuploadant des fichiers.
+
+
+  if success
+    img(src="http://az616578.vo.msecnd.net/files/2016/06/10/636011804533596877279417241_o-SUCCESS-facebook-3.jpg", alt="Putain, il est des nôtres !!!!")  
+
+  #newfile
+    form(action="newFile", method="post", enctype="multipart/form-data")
+      #buttons
+        label(for="css") CSS
+        input(type="file", id="css", name="css")
+        label(for="css") HTML
+        input(type="file", id="html", name="html")
+        label(for="css") JAVASCRIPT
+        input(type="file", id="js", name="js")
+      #ok
+        input(type="submit" value="vazi, fiston, c'est ton heure de gloire !")

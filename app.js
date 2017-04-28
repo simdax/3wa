@@ -24,23 +24,21 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 // file uploading
 
 app.use(fileupload());
 app.post("/newFile", function(req, res){
-  console.log(req.files.css);
-  // var file =     var imageBuffer = decodeBase64Image(req.files.file);
-  fs.writeFile("public/uploads/io.txt", req.files.css.data, function (err) {
-    console.log("coucou");
-    if(err){    res.send("file not written !") }
-    res.send("file written !")
+  fs.writeFile("uploads/style.css", req.files.css.data, function (err) {
+    if(err){ res.send("file not written !" + err) }
+    res.render('upload', {success:true})
   });
 })
 
+// require('./mysql.js');
+app.use("/users", express.static(path.join(__dirname, 'uploads')));
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

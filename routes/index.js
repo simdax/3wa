@@ -8,15 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/upload', function (req,res) {
-  res.render("upload");
+  res.render("upload", {success:null, name:"stranger"});
 })
-
-// router.post("/newFile", function(req, res) {
-//   console.log( "io");
-//   res.send("ok");
-// // console.log(req.file);
-//   // var io = new formidable.incomingForm();
-//   // console.log(io);
-// })
 
 module.exports = router;

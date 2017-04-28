@@ -1,23 +1,23 @@
-// var mysql      = require('mysql');
-// var connection = mysql.createConnection({
-//   host     : 'localhost',
-//   user     : 'root',
-//   password : 'troiswa',
-//   database : 'classicmodels'
-// });
-// console.log(connection);
-// connection.connect();
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'troiswa',
+  database : 'classicmodels'
+});
 
-// connection.query('SELECT * from classicmodels', function(err, rows, fields) {
-//   if (!err)
-//     console.log('The solution is: ', rows);
-//   else
-//     console.log('Error while performing Query.');
-// });
+connection.connect();
 
-// connection.end(function (err) {
-//   console.log(err);
-// });
+connection.query('SELECT * from customers', function(err, rows, fields) {
+  if (!err)
+    console.log('The solution is: ', rows);
+  else
+    console.log('Error while performing Query.');
+});
+
+connection.end(function (err) {
+  console.log(err);
+});
 
 // var firebase = require('firebase');
 
