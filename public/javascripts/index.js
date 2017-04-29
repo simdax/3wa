@@ -1,6 +1,9 @@
 $(function () {
 
-  var range = [2200,3400];
+  var positionMacronMarine = $("#iframes").position().top;
+  var positionBAM = $("#svg").position().top;
+
+  var range = [positionMacronMarine - 60, positionBAM + 250];
 
   $('.badge').lettering();
 
@@ -17,7 +20,5 @@ $(function () {
       $('#background1').css("background-position","21% 25%");
     }
   })
-
-  // $('form').on('submit', submitForm)
 
 })
