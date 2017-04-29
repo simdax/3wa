@@ -1,0 +1,32 @@
+mixin homeForm(legend="inscris-toi mec, juste pour le plaisir de faire du firebase !",dejaInscrit=true)
+  .fixedDiv
+    #auth
+      form(action="signUp",method="post")
+        fieldset
+          legend= legend
+          input(type="text" placeholder="ton nom" name="nom" required)
+          input(type="mail" placeholder="ton mail" name="mail" required)
+          input(type="submit" value="Mais ouais !") 
+      if dejaInscrit
+        form(action="signIn",method="post")
+          fieldset
+            legend Ou alors t'es déjà tellement inscrit, c'est chaud !
+            input(type="mail" placeholder="ton mail" name="mail" required)
+            input(type="submit" value="Mais ouais, encore plus !") 
+    script(src="javascripts/auth.js")
+
+
+
+mixin fileTransfert
+  .fixedDiv
+    #uploadForm
+      form(action="newFile", method="post", enctype="multipart/form-data")
+        #buttons
+          label(for="html") HTML
+          input(type="file", id="html", name="html")
+          label(for="css") CSS
+          input(type="file", id="css", name="css")
+          label(for="js") JAVASCRIPT
+          input(type="file", id="js", name="js")
+        #ok
+          input(type="submit" value="vazi, fiston, c'est ton heure de gloire !")

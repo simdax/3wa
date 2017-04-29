@@ -2,57 +2,28 @@
 $bgcolor: rgba(150,30,30,0.5)
 $mainColor: green
 
-@import '_badge.sass'
-@import '_iframe.sass'
-@import '_background.sass'
-@import '_lists.sass'
-@import '_form.sass'
-
-
-body
-  height: 100%
-  margin: 0
-  margin-top: -78px
-  background-color: $bgcolor
-  color: $mainColor
-  font-family: 'Oswald', sans-serif
-  font-size: 1.2rem
-
-a
-  text-decoration: none
-
-img
-  max-width: 80%
-
-.container
-  width: 80%
-  margin: auto
-
-h1
-  text-align: center
-  // margin-top: 150px 
-  margin-bottom: 300px 
-  font-family: 'Mukta Vaani', sans-serif
-  font-size: 6em
-  color: blue
-  // color: desaturate($mainColor, 20)   
+@import 'badge'
+@import 'iframe'
+@import 'background'
+@import 'lists'
+@import 'form'
+@import 'newfile'
+@import 'global'
 
 #titre
-  // display: flex
-  overflow: hidden
+  display: flex
+  // overflow: hidden
   margin-bottom: 500px
   position: relative
   p
     padding-top: 40px
     font-style: italic 
-  img:nth-of-type(1)
-    width: 7%
-    position: absolute
-    left: 565px;
-  img:nth-of-type(2)
-    width: 40%
-    float: right
-    display: inline-block
+    align-items: center
+  img
+    width: 50%
+    height: 20%
+    // float: right
+    // display: inline-block
 
 figure
   margin-bottom: 500px
@@ -81,6 +52,9 @@ a:hover
 
 
 .voixPeuple
+  position: relative
+  left: 30%
+  width : 70%
   text-align: right
   color: blue
   font-size: 3.8rem
@@ -95,8 +69,10 @@ a:hover
   font-size: 3rem
   text-align: center
   a    
+    color: grey
+  a:hover
     color: white
-
+    text-shadow: 70px 40px 7px black
 
 #appear
   animation-name: bob
@@ -128,6 +104,11 @@ a:hover
 #italic
   margin-top: 500px
 
+#zootopia
+  img
+    display: block
+
 p:last-child
   text-align: center
-  margin: 100px auto  
+  margin: 100px auto 
+  margin-bottom: 200px  

@@ -1,8 +1,26 @@
-form
-  width: 100%
-  color: white 
-  position: block
-  background-color: rgba(10,100,200,1)
-  position: fixed
-  bottom: 0
-  z-index: 10
+$color : peru // rgba(10,100,200,1)
+
+.fixedDiv
+	position: fixed
+	width: 100%
+	bottom: 0
+	z-index: 10
+	background-color: $color
+#auth
+	display: flex
+	form
+		color: white 
+		width: 50%
+
+#uploadForm
+	form
+		display: flex
+		label
+			display: block
+		&>*
+			width: 50%
+		#ok
+			display: flex
+			input
+				justify-content: center
+				align-items: center
