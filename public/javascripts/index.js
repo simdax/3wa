@@ -1,6 +1,6 @@
 $(function () {
 
-  var range = [2080,3250];
+  var range = [2200,3400];
 
   $('.badge').lettering();
 

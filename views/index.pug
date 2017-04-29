@@ -18,12 +18,8 @@ block content
     #dur.voixPeuple
       | En serais-je seulement capable un jour ?
     #iframes
-      - n = 0
-      while n < 1
-        iframe(src="//giphy.com/embed/3o6ZtecXpGSMOB0iQg?hideSocial=true" width="300" height="400" class="giphy-embed" frameBorder="0")
-        iframe(src="//giphy.com/embed/3oz8xHpIFb5NO2Exl6?hideSocial=true" width="300" height="400" class="giphy-embed" frameBorder="0")
-        #appear 
-        - n++
+      img(src="img/marine.gif")
+      img(src="img/macroune.gif")
     big Casse l'âne tienne, Philomène !
     P.
       La 3WA te permet de partager tes peines, tes douleurs, et tes désirs !
@@ -50,10 +46,11 @@ block content
     p.
       Mais attention !!!!
     p 
-      | Le succès de cet outil si apolitique en ces temps si troubles ne dépend
+      | Le succès de cet outil si apolitique en ces temps si troubles ne dépend :
       #color
-       a(href="https://fr.wikipedia.org/wiki/Moi_(psychanalyse)")
-        | que de toi !!
+        | que de 
+        a(href="https://fr.wikipedia.org/wiki/Moi_(psychanalyse)") toi 
+        |.
     p Il va falloir :
     ul
       li le feeder

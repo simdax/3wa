@@ -52,17 +52,6 @@ app.post("/newFile", function(req, res){
   res.redirect("/users");
 })
 
-// var browserSync = require('browser-sync');
-// var bs = browserSync.create()
-// .init({
-//  logSnippet: false,
-// });
-// app.use(require('connect-browser-sync')(bs));
- 
-
-// require('./mysql.js');
-require('./routes/firebase.js');
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/users", express.static(path.join(__dirname, 'uploads')));
 app.use('/', index);
