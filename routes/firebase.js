@@ -33,7 +33,7 @@ firebase.initializeApp(config);
 	// /_//_/     /_/ /_/\___/_/ .___/\___/_/  /____/
 	//                        /_/
 
-	var signIn = function(mail, res) {      
+	var signIn = function(mail, req, res) {      
 		firebase.auth().signInWithEmailAndPassword(mail, "pasdepass").then(function(user) {
 			req.session.user = user;
 			res.redirect('upload');
@@ -46,19 +46,23 @@ firebase.initializeApp(config);
 		});
 	};
 
-
-  // create user
-  var create = function(nom, mail, res){
-  	firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
+	var updateName =function (user, nom) {
       // update profile ...
       user.updateProfile({
       	displayName: nom
       }).then(function() {
       	console.log("nom de l'user : "+user.displayName);
       });
+	}
+
+  // create user
+  var create = function(nom, mail, res, req){
+  	firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
+  		updateName(user, nom);
       // ... and send email verification
       user.sendEmailVerification().then(function() {
       	console.log("email sent");
+      	req.session.user = user;
       	res.redirect('upload');
       },function(err) { 
       	console.log("error : "+err);
@@ -73,7 +77,8 @@ firebase.initializeApp(config);
 
   module.exports={
   	signIn: signIn,
-  	create: create
+  	create: create,
+  	updateName: updateName
   }
 
 }())

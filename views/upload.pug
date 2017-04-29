@@ -1,17 +1,14 @@
 extends layout
 
-
-
 block content
-  
   include forms.pug
   #intro
     h1 OK, #{name}
     if name == "stranger"
       :markdown-it
         Déjà, mon grand, il va falloir que t'apprennes qu'ici, on commence par se présenter, et là où qu'on se présente, c'est à l'entrée, là où on s'essuie les pieds, par terre,
-        [all right ?]('/')
-      +form1
+        [all right ?](/)
+      +homeForm("allez, inscris-toi, c'est trop bien",false)
     else
       :markdown-it
           Alors, il paraîtrait que tu voudrais écrire du gros code pour les copéins?
@@ -19,7 +16,7 @@ block content
           C'est bien, ça, les copéins...
 
           Bon, alors, c'est pas troooooooop, trop compliqué.
-          On n'a que deux règles dans le métier, et on commence par la fin.
+          On n'a que trois règles dans le métier, et on commence par la fin.
 
           ## règle n°3 :
             Chez nous, on est pas des p'tites Sissi à se faire faire des liens tout chauds tout flammes dans ce [genre-là](//codepen.io). Chez nous, on fait tout à la main, à la dur, on souffre et on aime. Donc, tous les "links", et autres "script" bidule machin chose, on les fait, comme dans la vraie vie. D'où la deuxième règle : 
@@ -45,9 +42,8 @@ block content
 
           Après, pour te faire connaître, ta pub et tout, c'est pas les restos du coeur ici, oké? Tu te débrouilles, tu vas sur la slack, tu blablates IRL comme disent les jeunes, et tout le toutim, hein... 
 
-
-  if success
-    img(src="http://az616578.vo.msecnd.net/files/2016/06/10/636011804533596877279417241_o-SUCCESS-facebook-3.jpg", alt="Putain, il est des nôtres !!!!")  
+  //- if success
+  //-   img(src="http://az616578.vo.msecnd.net/files/2016/06/10/636011804533596877279417241_o-SUCCESS-facebook-3.jpg", alt="Putain, il est des nôtres !!!!")  
 
   if name != "stranger"
-    +form3
+    +fileTransfert

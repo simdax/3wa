@@ -1,27 +1,44 @@
 module.exports = function(app) {
 
-	app.post("/newFile", function(req, res){
+  var fs = require('fs');
+  
+  function writeFiles(files,path) {
+    var opts={
+      css:"style.css",
+      html:"index.html",
+      js:"main.js"
+    };
+    for (k in opts) {
+      if(files[k]){  
+        console.log("processing"+k);
+        fs.writeFile(path+"/"+opts[k], files[k].data, function (err) {
+          if(err){console.log(err);}
+        });
+      }      
+    }
+    // if(files.css){  
+    //   console.log("processing css");
+    //   fs.writeFile(path+"/style.css", files.css.data, function (err) {
+    //     if(err){console.log(err);}
+    //   });
+    // }
+    // if(files.js){  
+    //   console.log("processing js");
+    //   fs.writeFile(path+"/main.js", files.js.data, function (err) {
+    //     if(err){console.log(err);}
+    //   });
+    // }
+  }
 
-  console.log(req.files);
 
-  if(req.files.html){  
-    console.log("processing html");
-    fs.writeFile("uploads/index.html", req.files.html.data, function (err) {
-      console.log(err);
-    });
-  }
-  if(req.files.css){  
-        console.log("processing css");
-    fs.writeFile("uploads/style.css", req.files.css.data, function (err) {
-      console.log(err);
-    });
-  }
-  if(req.files.js){  
-        console.log("processing js");
-    fs.writeFile("uploads/main.js", req.files.js.data, function (err) {
-      console.log(err);
-    });
-  }
+  app.post("/newFile", function(req, res){
+
+    console.log(req.files);
+    console.log(req.session);
+    var folderName = "uploads/" + req.session.user.displayName;
+  // crade mais efficace :)
+  fs.existsSync(folderName) || fs.mkdirSync(folderName);
+  writeFiles(req.files, folderName);
   res.redirect("/users");
 })
 

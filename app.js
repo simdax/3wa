@@ -40,13 +40,14 @@ app.use(fileupload());
 // /_//_/     /_/   \____/\__,_/\__/\___/____/
 
 
-require("./routes/newFile.js")(app);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use("/users", express.static(path.join(__dirname, 'uploads')));
+app.use("/users",express.static(path.join(__dirname, 'uploads')));
+
+require("./routes/newFile.js")(app);
 var index = require('./routes/index');
-//var users = require('./routes/users');
+var uploads = require('./routes/uploads');
 app.use('/', index);
-// app.use('/users', users);
+app.use("/users", uploads);
 
 
 
