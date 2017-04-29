@@ -7,12 +7,15 @@
     "watch": "nodemon & browser-sync start --port 3001 --proxy 'localhost:3000' -f 'views/*' 'public/stylesheets/*' 'public/javascripts/*' "
   },
   "dependencies": {
+    "atob": "^2.0.3",
     "body-parser": "~1.17.1",
     "browser-sync": "^2.18.8",
+    "btoa": "^1.1.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "express-fileupload": "^0.1.2",
+    "express-session": "^1.15.2",
     "firebase": "^3.9.0",
     "jstransformer-markdown-it": "^2.0.0",
     "jstransformer-sass": "^0.1.1",
