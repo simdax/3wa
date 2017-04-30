@@ -1,0 +1,422 @@
+@keyframes dragonColor {
+  0 {
+    background-color: red; }
+  1 {
+    background-color: red; }
+  2 {
+    background-color: red; }
+  3 {
+    background-color: red; }
+  4 {
+    background-color: red; }
+  5 {
+    background-color: red; }
+  6 {
+    background-color: red; }
+  7 {
+    background-color: red; }
+  8 {
+    background-color: red; }
+  9 {
+    background-color: red; }
+  10 {
+    background-color: red; }
+  11 {
+    background-color: red; }
+  12 {
+    background-color: red; }
+  13 {
+    background-color: red; }
+  14 {
+    background-color: red; }
+  15 {
+    background-color: red; }
+  16 {
+    background-color: red; }
+  17 {
+    background-color: red; }
+  18 {
+    background-color: red; }
+  19 {
+    background-color: red; }
+  20 {
+    background-color: red; }
+  21 {
+    background-color: red; }
+  22 {
+    background-color: red; }
+  23 {
+    background-color: red; }
+  24 {
+    background-color: red; }
+  25 {
+    background-color: red; }
+  26 {
+    background-color: red; }
+  27 {
+    background-color: red; }
+  28 {
+    background-color: red; }
+  29 {
+    background-color: red; }
+  30 {
+    background-color: red; }
+  31 {
+    background-color: red; }
+  32 {
+    background-color: red; }
+  33 {
+    background-color: red; }
+  34 {
+    background-color: red; }
+  35 {
+    background-color: red; }
+  36 {
+    background-color: red; }
+  37 {
+    background-color: red; }
+  38 {
+    background-color: red; }
+  39 {
+    background-color: red; }
+  40 {
+    background-color: red; }
+  41 {
+    background-color: red; }
+  42 {
+    background-color: red; }
+  43 {
+    background-color: red; }
+  44 {
+    background-color: red; }
+  45 {
+    background-color: red; }
+  46 {
+    background-color: red; }
+  47 {
+    background-color: red; }
+  48 {
+    background-color: red; }
+  49 {
+    background-color: red; }
+  50 {
+    background-color: red; }
+  51 {
+    background-color: red; }
+  52 {
+    background-color: red; }
+  53 {
+    background-color: red; }
+  54 {
+    background-color: red; }
+  55 {
+    background-color: red; }
+  56 {
+    background-color: red; }
+  57 {
+    background-color: red; }
+  58 {
+    background-color: red; }
+  59 {
+    background-color: red; }
+  60 {
+    background-color: red; }
+  61 {
+    background-color: red; }
+  62 {
+    background-color: red; }
+  63 {
+    background-color: red; }
+  64 {
+    background-color: red; }
+  65 {
+    background-color: red; }
+  66 {
+    background-color: red; }
+  67 {
+    background-color: red; }
+  68 {
+    background-color: red; }
+  69 {
+    background-color: red; }
+  70 {
+    background-color: red; }
+  71 {
+    background-color: red; }
+  72 {
+    background-color: red; }
+  73 {
+    background-color: red; }
+  74 {
+    background-color: red; }
+  75 {
+    background-color: red; }
+  76 {
+    background-color: red; }
+  77 {
+    background-color: red; }
+  78 {
+    background-color: red; }
+  79 {
+    background-color: red; }
+  80 {
+    background-color: red; }
+  81 {
+    background-color: red; }
+  82 {
+    background-color: red; }
+  83 {
+    background-color: red; }
+  84 {
+    background-color: red; }
+  85 {
+    background-color: red; }
+  86 {
+    background-color: red; }
+  87 {
+    background-color: red; }
+  88 {
+    background-color: red; }
+  89 {
+    background-color: red; }
+  90 {
+    background-color: red; }
+  91 {
+    background-color: red; }
+  92 {
+    background-color: red; }
+  93 {
+    background-color: red; }
+  94 {
+    background-color: red; }
+  95 {
+    background-color: red; }
+  96 {
+    background-color: red; }
+  97 {
+    background-color: red; }
+  98 {
+    background-color: red; }
+  99 {
+    background-color: red; }
+  100 {
+    background-color: red; } }
+
+@keyframes dragon {
+  0% {
+    transform: translateY(284px) translateX(70px); }
+  1% {
+    transform: translateY(146px) translateX(329px); }
+  2% {
+    transform: translateY(475px) translateX(296px); }
+  3% {
+    transform: translateY(3px) translateX(562px); }
+  4% {
+    transform: translateY(362px) translateX(397px); }
+  5% {
+    transform: translateY(54px) translateX(549px); }
+  6% {
+    transform: translateY(267px) translateX(950px); }
+  7% {
+    transform: translateY(261px) translateX(653px); }
+  8% {
+    transform: translateY(134px) translateX(1076px); }
+  9% {
+    transform: translateY(349px) translateX(1116px); }
+  10% {
+    transform: translateY(326px) translateX(1054px); }
+  11% {
+    transform: translateY(235px) translateX(759px); }
+  12% {
+    transform: translateY(283px) translateX(13px); }
+  13% {
+    transform: translateY(318px) translateX(1046px); }
+  14% {
+    transform: translateY(392px) translateX(849px); }
+  15% {
+    transform: translateY(377px) translateX(723px); }
+  16% {
+    transform: translateY(444px) translateX(566px); }
+  17% {
+    transform: translateY(441px) translateX(571px); }
+  18% {
+    transform: translateY(105px) translateX(1158px); }
+  19% {
+    transform: translateY(100px) translateX(817px); }
+  20% {
+    transform: translateY(264px) translateX(277px); }
+  21% {
+    transform: translateY(108px) translateX(1042px); }
+  22% {
+    transform: translateY(477px) translateX(1196px); }
+  23% {
+    transform: translateY(361px) translateX(616px); }
+  24% {
+    transform: translateY(434px) translateX(87px); }
+  25% {
+    transform: translateY(337px) translateX(384px); }
+  26% {
+    transform: translateY(500px) translateX(608px); }
+  27% {
+    transform: translateY(412px) translateX(860px); }
+  28% {
+    transform: translateY(480px) translateX(259px); }
+  29% {
+    transform: translateY(51px) translateX(330px); }
+  30% {
+    transform: translateY(212px) translateX(820px); }
+  31% {
+    transform: translateY(480px) translateX(241px); }
+  32% {
+    transform: translateY(286px) translateX(325px); }
+  33% {
+    transform: translateY(441px) translateX(993px); }
+  34% {
+    transform: translateY(235px) translateX(60px); }
+  35% {
+    transform: translateY(447px) translateX(682px); }
+  36% {
+    transform: translateY(299px) translateX(351px); }
+  37% {
+    transform: translateY(32px) translateX(10px); }
+  38% {
+    transform: translateY(20px) translateX(783px); }
+  39% {
+    transform: translateY(480px) translateX(1155px); }
+  40% {
+    transform: translateY(84px) translateX(642px); }
+  41% {
+    transform: translateY(34px) translateX(358px); }
+  42% {
+    transform: translateY(31px) translateX(809px); }
+  43% {
+    transform: translateY(40px) translateX(1190px); }
+  44% {
+    transform: translateY(49px) translateX(996px); }
+  45% {
+    transform: translateY(293px) translateX(944px); }
+  46% {
+    transform: translateY(47px) translateX(544px); }
+  47% {
+    transform: translateY(21px) translateX(1163px); }
+  48% {
+    transform: translateY(71px) translateX(163px); }
+  49% {
+    transform: translateY(408px) translateX(1073px); }
+  50% {
+    transform: translateY(296px) translateX(1163px); }
+  51% {
+    transform: translateY(260px) translateX(380px); }
+  52% {
+    transform: translateY(455px) translateX(38px); }
+  53% {
+    transform: translateY(389px) translateX(866px); }
+  54% {
+    transform: translateY(405px) translateX(463px); }
+  55% {
+    transform: translateY(309px) translateX(798px); }
+  56% {
+    transform: translateY(415px) translateX(1086px); }
+  57% {
+    transform: translateY(379px) translateX(560px); }
+  58% {
+    transform: translateY(97px) translateX(553px); }
+  59% {
+    transform: translateY(9px) translateX(1163px); }
+  60% {
+    transform: translateY(323px) translateX(304px); }
+  61% {
+    transform: translateY(260px) translateX(969px); }
+  62% {
+    transform: translateY(49px) translateX(592px); }
+  63% {
+    transform: translateY(5px) translateX(358px); }
+  64% {
+    transform: translateY(480px) translateX(256px); }
+  65% {
+    transform: translateY(466px) translateX(577px); }
+  66% {
+    transform: translateY(23px) translateX(421px); }
+  67% {
+    transform: translateY(301px) translateX(706px); }
+  68% {
+    transform: translateY(332px) translateX(893px); }
+  69% {
+    transform: translateY(355px) translateX(1076px); }
+  70% {
+    transform: translateY(134px) translateX(108px); }
+  71% {
+    transform: translateY(177px) translateX(571px); }
+  72% {
+    transform: translateY(429px) translateX(838px); }
+  73% {
+    transform: translateY(46px) translateX(122px); }
+  74% {
+    transform: translateY(363px) translateX(266px); }
+  75% {
+    transform: translateY(104px) translateX(390px); }
+  76% {
+    transform: translateY(231px) translateX(70px); }
+  77% {
+    transform: translateY(286px) translateX(280px); }
+  78% {
+    transform: translateY(180px) translateX(921px); }
+  79% {
+    transform: translateY(215px) translateX(43px); }
+  80% {
+    transform: translateY(108px) translateX(1131px); }
+  81% {
+    transform: translateY(380px) translateX(658px); }
+  82% {
+    transform: translateY(403px) translateX(337px); }
+  83% {
+    transform: translateY(114px) translateX(1180px); }
+  84% {
+    transform: translateY(45px) translateX(354px); }
+  85% {
+    transform: translateY(440px) translateX(1079px); }
+  86% {
+    transform: translateY(176px) translateX(305px); }
+  87% {
+    transform: translateY(69px) translateX(68px); }
+  88% {
+    transform: translateY(232px) translateX(965px); }
+  89% {
+    transform: translateY(492px) translateX(802px); }
+  90% {
+    transform: translateY(331px) translateX(458px); }
+  91% {
+    transform: translateY(337px) translateX(842px); }
+  92% {
+    transform: translateY(324px) translateX(679px); }
+  93% {
+    transform: translateY(118px) translateX(631px); }
+  94% {
+    transform: translateY(165px) translateX(323px); }
+  95% {
+    transform: translateY(212px) translateX(149px); }
+  96% {
+    transform: translateY(52px) translateX(998px); }
+  97% {
+    transform: translateY(122px) translateX(757px); }
+  98% {
+    transform: translateY(135px) translateX(1193px); }
+  99% {
+    transform: translateY(115px) translateX(622px); }
+  100% {
+    transform: translateY(204px) translateX(892px); } }
+
+#dragon {
+  text-align: center;
+  animation-name: dragon;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+#dragonHP {
+  text-align: center;
+  font-size: 3rem;
+  color: olive; }
+
+[hidden] {
+  display: none; }

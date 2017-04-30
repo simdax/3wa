@@ -1,4 +1,8 @@
+style
+	include:sass ../uploads/style.sass
+	
 ul
 	each user in users
 		li
 			a(href="/users/"+user) #{user}
+			img(src=user+'prev.png')

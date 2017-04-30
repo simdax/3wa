@@ -36,6 +36,7 @@ firebase.initializeApp(config);
 	var signIn = function(mail, req, res) {      
 		firebase.auth().signInWithEmailAndPassword(mail, "pasdepass").then(function(user) {
 			req.session.user = user;
+			// console.log('logged with '+user.displayName);
 			res.redirect('upload');
 		},
 		function(err) {
