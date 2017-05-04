@@ -1,17 +1,29 @@
 $color : peru // rgba(10,100,200,1)
 
+
 .fixedDiv
 	position: fixed
 	width: 100%
-	bottom: 0
+	top: 0
 	z-index: 10
 	background-color: $color
+
+.fixedDivBottom
+	@extend .fixedDiv
+	top: initial
+	bottom: 0
+
 #auth
 	display: flex
 	form
 		color: white 
 		width: 50%
 
+.alreadyLogged
+	display: flex
+	justify-content: space-around
+	align-items: center
+		
 #uploadForm
 	form
 		display: flex

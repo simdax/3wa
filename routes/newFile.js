@@ -1,7 +1,7 @@
 module.exports = function(app) {
 
   var fs = require('fs');
-  var takePhoto = require('../uploads/webshot.js');
+  var takePhoto = require('./webshot.js');
 
   function writeFiles(files,path,cb) {
     var opts={
@@ -18,20 +18,22 @@ module.exports = function(app) {
         });
       }
     };
-    cb =  function(){res.redirect("/users")};
-    takePhoto(path+'prev.png',files.html.data,files.css.data,cb);
+    var html,css;
+    console.log(files.css);
+    if(files.html.data) {html=files.html.data} else {html=""};
+    if(files.css.data) {css=files.css.data} else {css=""};
+    takePhoto(path+'prev.png',html,css,cb);
   }
-
 
   app.post("/newFile", function(req, res){
     var name;
     if ( req.session.user) 
     {name = req.session.user.displayName; }
-    {name ="stranger";}
+    else {name ="stranger";}
     var folderName = "uploads/"+ name;
   // crade mais efficace :)
-  fs.existsSync(folderName) || fs.mkdirSync(folderName);
-  writeFiles(req.files, folderName, res);
+    writeFiles(req.files, folderName, res);
+    res.redirect("/users");
 })
 
 

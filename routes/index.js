@@ -1,44 +1,58 @@
 var express = require('express');
 var router = express.Router();
-
 var firebase = require('./firebase.js');
+var fs =require('fs');
+var takePicture = require('./webshot.js');
+
 
 router.get('/', function(req, res) {
   res.render('index', { title: '3wa Coding Challenges' });
 });
 
+var template = "Il n'y a rien dedans !";
+
 // we need res to redirect
 var create = function(req, res) {
+  var back= function(){res.redirect('back')};
   var nom  =  req.body.nom;
   var mail =  req.body.mail;
-  firebase.create(nom,mail,res,req);
+  var promise = firebase.create(nom,mail,res,req);
+  dir = "uploads/"+nom;
+  fs.existsSync(dir) || fs.mkdirSync(dir);
+  fs.writeFile(dir+"/index.html",template,function(err) {
+    console.log(err);
+  });
+  takePicture(dir+"prev.png",template,"");
+  promise.then(back);
 };
 // we use req to store cookies
 var signIn =  function (req,res) {
+  var back= function(){res.redirect('back')};  
   var mail = req.body.mail;
-  firebase.signIn(mail, req, res);
+  var promise =  firebase.signIn(mail, req, res);
+  promise.then(back);
 }
-var home = function (req,res) {
-	var name = "stranger";
-  var namePopUp = false;
-	if (req.session.user) {
-		var name =  req.session.user.displayName;
-    if (!name) {
-      console.log("la");
-      namePopUp = true;
-    }
-	}
-  res.render("upload", { popup: namePopUp, name: name})
+var upload = function (req,res) {
+  res.render("upload")
 };
-
-var justName = function (req, res) {
-  firebase.update(req.body.name, user);
-  res.redirect('/upload');
+var logOut = function (req, res) {
+  firebase.logOut().then(function () {
+    res.redirect('back');
+  });
 }
 
-router.get('/upload', home);
+
+router.get('/upload', upload);
+router.get("/logOut", logOut);
 router.post('/signUp', create);
 router.post("/signIn", signIn);
-router.post("/justName", justName)
+
+
+// deprecated
+// var justName = function (req, res) {
+//   firebase.update(req.body.name, user);
+//   res.redirect('/upload');
+// }
+// router.post("/justName", justName)
 
 module.exports = router;

@@ -33,6 +33,17 @@ app.use(session({
 }));
 app.use(fileupload());
 
+app.locals.logged = false;
+var firebase = require('./routes/firebase')
+firebase.globalAuth(app);
+
+
+app.locals.name = "stranger";
+app.use(function (req,res,next) {
+  console.log("logged "+app.locals.logged);  
+  next();
+})
+
 //        __ __                    __
 //      _/_//_/  _________  __  __/ /____  _____
 //    _/_//_/   / ___/ __ \/ / / / __/ _ \/ ___/

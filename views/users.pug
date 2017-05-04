@@ -1,20 +1,23 @@
--var infos = "io,ia,des trucs de fou,etc, et encore".split(",")
+extends layout
 
-html
-    head
-      link(rel="stylesheet" href="style.css")
-      link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-    body
-      h1 
-        | Les créations de tous 
-        i.fa.fa-heart
-      ul.wrap
-        each user in users
-          li.badge
-            a(href="/users/"+user).bob
-              p= user
-              img(src=user+'prev.png')
-            .infos
-              ul
-                for info in infos
-                  li= info
+mixin badge(name,user,id)
+  li.sitesBadge(id=id)
+    a(href="/users/"+name).image
+      p= name
+      img(src=name+'prev.png')
+    .infos
+      ul
+        for v, info in user.infos
+          li #{v} : #{info}
+
+block content
+  h1 
+    | Les créations de tous 
+    i.fa.fa-heart
+  ul.wrap
+    each user in users
+      - var n = user.username
+      if n == name
+        +badge(name,user,"moi")
+      else
+        +badge(name,user,"autres")
