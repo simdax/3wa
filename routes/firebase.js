@@ -20,6 +20,9 @@ firebase.initializeApp(config);
 	// global hook ===> purpose ??
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
+            // console.log(user);
+      // console.log(firebase.database().ref());
+
 			console.log("logged");
 		} else {
 			console.log("user unlogged");
@@ -35,43 +38,55 @@ firebase.initializeApp(config);
 
 	var signIn = function(mail, req, res) {      
 		firebase.auth().signInWithEmailAndPassword(mail, "pasdepass").then(function(user) {
-			req.session.user = user;
-			// console.log('logged with '+user.displayName);
-			res.redirect('upload');
-		},
-		function(err) {
-			console.log("erreur");
-			var errorCode = err.code;
-			var msg = err.message;
-			res.send('bon alors ?')
-		});
-	};
+      // DATABASE
+      req.session.user = user;
+      // console.log('logged with '+user.displayName);
+      res.redirect('upload');
+    },
+    function(err) {
+      console.log("erreur");
+      var errorCode = err.code;
+      var msg = err.message;
+      res.send('bon alors ?')
+    });
+  };
 
-	var updateName =function (user, nom) {
+  function writeUserData(userid,name,email,imageUrl) {
+    console.log(userid,name,email);
+    firebase.database().ref('/users/'+userid).set({
+      userId: userid,
+      username: name,
+      email: email 
+    })
+  };
+    
+  var update =function (user, nom) {
       // update profile ...
       user.updateProfile({
-      	displayName: nom
+        displayName: nom
       }).then(function() {
-      	console.log("nom de l'user : "+user.displayName);
+        console.log("nom de l'user : "+user.displayName);
+        writeUserData(user.uid,user.displayName,user.email);
       });
-	}
+  }
 
   // create user
   var create = function(nom, mail, res, req){
-  	firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
-  		updateName(user, nom);
+    firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
+      console.log(user);
+      update(user, nom);
       // ... and send email verification
       user.sendEmailVerification().then(function() {
-      	console.log("email sent");
-      	req.session.user = user;
-      	res.redirect('upload');
+        console.log("email sent");
+        req.session.user = user;
+        res.redirect('upload');
       },function(err) { 
-      	console.log("error : "+err);
-      	res.send("problème de création de mail...");
+        console.log("error : "+err);
+        res.send("problème de création de mail... "+err);
       }
       );
-    }, function() {
-    	res.send("problème de création de user...");
+    }, function(err) {
+    	res.send("problème de création de user... "+err);
     })
   };
 
@@ -79,7 +94,7 @@ firebase.initializeApp(config);
   module.exports={
   	signIn: signIn,
   	create: create,
-  	updateName: updateName
+  	update: update
   }
 
 }())

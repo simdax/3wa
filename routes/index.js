@@ -32,7 +32,7 @@ var home = function (req,res) {
 };
 
 var justName = function (req, res) {
-  firebase.updateName(req.body.name, user);
+  firebase.update(req.body.name, user);
   res.redirect('/upload');
 }
 
