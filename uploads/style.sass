@@ -1,5 +1,48 @@
-li
-	list-style-type: none
 
-img
-	width: 10%
+$fond: rgb(20,180,20)
+
+body
+  background-color: pink
+
+h1
+  text-align: center  
+  width: 70%
+  margin: auto
+
+li 
+  list-style-type: none
+
+.wrap
+ display: flex
+ flex-wrap: wrap
+
+.badge
+  background-color: rgba($fond, 0.5)
+  display: flex
+  border-radius: 50px
+  margin: 50px auto  
+  padding: 20px
+  width: 40%
+  justify-content: space-around
+  .bob 
+    display: flex
+    flex-direction: column
+    p
+      padding: 20px
+      text-align: center
+      margin: 5px 
+    img
+      border-radius: 10px
+      width: 100%
+      height: 100%
+  .infos
+    ul
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      padding: 0
+    li
+      padding-left: 10px
+      font-size: 0.7em
+

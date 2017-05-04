@@ -1,8 +1,20 @@
-style
-	include:sass ../uploads/style.sass
-	
-ul
-	each user in users
-		li
-			a(href="/users/"+user) #{user}
-			img(src=user+'prev.png')
+-var infos = "io,ia,des trucs de fou,etc, et encore".split(",")
+
+html
+    head
+      link(rel="stylesheet" href="style.css")
+      link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    body
+      h1 
+        | Les créations de tous 
+        i.fa.fa-heart
+      ul.wrap
+        each user in users
+          li.badge
+            a(href="/users/"+user).bob
+              p= user
+              img(src=user+'prev.png')
+            .infos
+              ul
+                for info in infos
+                  li= info
