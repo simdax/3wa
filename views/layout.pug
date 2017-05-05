@@ -3,15 +3,16 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href="//unpkg.com/normalize.css")
+    link(rel='stylesheet', href="https://unpkg.com/normalize.css")
     link(href="//fonts.googleapis.com/css?family=Oswald|Press+Start+2P|Mukta+Vaani" rel="stylesheet")
     script(src="//unpkg.com/jquery@3.2.1")
+    script(src="//unpkg.com/vue")
 
     style
         include:sass ../public/stylesheets/main.sass
 
   body
     block content
-    include forms.pug
+    include forms
     +homeForm
 

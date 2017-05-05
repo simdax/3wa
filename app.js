@@ -39,8 +39,8 @@ var firebase = require('./routes/firebase')
 firebase.globalAuth(app);
 
 app.use(function (req,res,next) {
-  // console.log("logged ",app.locals);  
-  // console.log("logged ",req.session);  
+  // if debug
+  // console.log("session =  ",req.session);  
   res.locals = req.session;
   next();
 })

@@ -100,7 +100,7 @@ var create = function(nom, mail, res, req){
    update(user, nom);
    sendMail(user);
    req.session.logged = true; 
-   req.session.name = user.displayName; 
+   req.session.name = nom; 
  }, function(err) {
    console.log("problème de création de user... "+err);
  })
