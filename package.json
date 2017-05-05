@@ -16,6 +16,7 @@
     "express-session": "^1.15.2",
     "firebase": "^3.9.0",
     "firebase-admin": "^4.2.1",
+    "jstransformer-coffee-script": "^1.1.0",
     "jstransformer-markdown-it": "^2.0.0",
     "jstransformer-sass": "^0.1.1",
     "morgan": "~1.8.1",

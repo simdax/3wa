@@ -28,7 +28,6 @@ var create = function(req, res) {
 // we use req to store cookies
 var signIn =  function (req,res) {
   var back= function(user){
-    console.log(req.session);
     res.redirect('back')
   };  
   var mail = req.body.mail;

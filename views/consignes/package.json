@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "jstransformer-coffee-script": "^1.1.0"
+  }
+}

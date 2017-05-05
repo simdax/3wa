@@ -15,6 +15,7 @@ new Vue({
       return eval(verif);
     },
     submit:function(e) {
+      if (this.valid) {e.target.submit()}
     }
   },
   computed:{
