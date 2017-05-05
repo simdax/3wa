@@ -1,8 +1,8 @@
 (function(){
 
-console.log();
-var express = require('express');
-var app = express();
+  console.log();
+  var express = require('express');
+  var app = express();
 
 //        __ ___       _ __
 //      _/_//_    (_)___  (_) /_
@@ -48,8 +48,6 @@ var globalAuth = function (app) {
 var signIn = function(mail, req, res) {      
 	return firebase.auth().signInWithEmailAndPassword(mail, "pasdepass")
   .then(function(user) {
-    // res.locals.logged = true; 
-    // res.locals.name = user.displayName; 
     req.session.logged = true; 
     req.session.name = user.displayName; 
     console.log("signed in");
@@ -99,9 +97,10 @@ var update = function (user, nom) {
 // create user
 var create = function(nom, mail, res, req){
   return firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
-   // req.session.user = user;
    update(user, nom);
    sendMail(user);
+   req.session.logged = true; 
+   req.session.name = user.displayName; 
  }, function(err) {
    console.log("problème de création de user... "+err);
  })
