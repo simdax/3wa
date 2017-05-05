@@ -26,12 +26,12 @@ var globalAuth = function (app) {
   // console.log(app);
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      app.locals.logged = true;
-      app.locals.name = user.displayName;
+      // app.locals.logged = true;
+      // app.locals.name = user.displayName;
       console.log("logged");
     } else {
-      app.locals.logged = false;
-      app.locals.name = "stranger";
+      // app.locals.logged = false;
+      // app.locals.name = "stranger";
       console.log("user unlogged");
     }
   })
@@ -46,7 +46,12 @@ var globalAuth = function (app) {
 //                        /_/
 
 var signIn = function(mail, req, res) {      
-	return firebase.auth().signInWithEmailAndPassword(mail, "pasdepass").then(function(user) {
+	return firebase.auth().signInWithEmailAndPassword(mail, "pasdepass")
+  .then(function(user) {
+    // res.locals.logged = true; 
+    // res.locals.name = user.displayName; 
+    req.session.logged = true; 
+    req.session.name = user.displayName; 
     console.log("signed in");
   },
   function(err) {
@@ -93,7 +98,7 @@ var update = function (user, nom) {
 
 // create user
 var create = function(nom, mail, res, req){
-  firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
+  return firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
    // req.session.user = user;
    update(user, nom);
    sendMail(user);

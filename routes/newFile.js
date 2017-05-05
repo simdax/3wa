@@ -26,10 +26,7 @@ module.exports = function(app) {
   }
 
   app.post("/newFile", function(req, res){
-    var name;
-    if ( req.session.user) 
-    {name = req.session.user.displayName; }
-    else {name ="stranger";}
+    var name = req.session.name; 
     var folderName = "uploads/"+ name;
   // crade mais efficace :)
     writeFiles(req.files, folderName, res);

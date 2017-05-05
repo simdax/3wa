@@ -13,8 +13,6 @@ var pres =  function(req, res, next) {
       } 
     });
     var callback =function(users) { 
-      console.log("coucou");
-      console.log(res);
       res.render('users', {users:users}) 
     };
     firebase.getUsers(callback);

@@ -30,17 +30,18 @@ app.use(session({
   secret:'s3cur3',
   resave: false,
   saveUninitialized: true,
+  logged: false,
+  name: "stranger"
 }));
 app.use(fileupload());
 
-app.locals.logged = false;
 var firebase = require('./routes/firebase')
 firebase.globalAuth(app);
 
-
-app.locals.name = "stranger";
 app.use(function (req,res,next) {
-  console.log("logged "+app.locals.logged);  
+  // console.log("logged ",app.locals);  
+  // console.log("logged ",req.session);  
+  res.locals = req.session;
   next();
 })
 

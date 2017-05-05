@@ -1,6 +1,7 @@
 extends layout
 
-mixin badge(name,user,id)
+mixin badge(user,id)
+  - var name = user.username
   li.sitesBadge(id=id)
     a(href="/users/"+name).image
       p= name
@@ -16,8 +17,7 @@ block content
     i.fa.fa-heart
   ul.wrap
     each user in users
-      - var n = user.username
-      if n == name
-        +badge(name,user,"moi")
+      if user.username == name
+        +badge(user,"moi")
       else
-        +badge(name,user,"autres")
+        +badge(user,"autres")

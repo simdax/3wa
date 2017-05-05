@@ -27,7 +27,10 @@ var create = function(req, res) {
 };
 // we use req to store cookies
 var signIn =  function (req,res) {
-  var back= function(){res.redirect('back')};  
+  var back= function(user){
+    console.log(req.session);
+    res.redirect('back')
+  };  
   var mail = req.body.mail;
   var promise =  firebase.signIn(mail, req, res);
   promise.then(back);
@@ -37,6 +40,8 @@ var upload = function (req,res) {
 };
 var logOut = function (req, res) {
   firebase.logOut().then(function () {
+    req.session.logged = false;
+    req.session.name = "stranger";
     res.redirect('back');
   });
 }
