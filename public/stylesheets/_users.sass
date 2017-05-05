@@ -1,0 +1,44 @@
+
+$fondNormal: rgb(20,180,20)
+$fondMoi: rgb(180,180,20)
+
+
+
+.wrap
+ display: flex
+ flex-wrap: wrap
+
+#moi
+  background-color: rgba($fondMoi, 0.5)
+
+.sitesBadge
+  background-color: rgba($fondNormal, 0.5)
+  display: flex
+  border-radius: 50px
+  margin: 50px auto  
+  padding: 20px
+  width: 40%
+  justify-content: space-around
+  .image 
+    display: flex
+    flex-direction: column
+    p
+      padding: 20px
+      text-align: center
+      margin: 5px 
+    img
+      border-radius: 10px
+      width: 100%
+      height: 100%
+  .infos
+    ul
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      padding: 0
+    li
+      list-style-type: none
+      padding-left: 10px
+      font-size: 0.7em
+

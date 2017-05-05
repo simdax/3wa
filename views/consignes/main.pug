@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  h1 C'est un truc de ouf
+
+  ul
+    each file in files
+      li: a(href=file)=file
