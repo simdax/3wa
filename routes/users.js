@@ -8,13 +8,14 @@ var fb = require('firebase');
 var pres =  function(req, res, next) {
   fs.readdir('uploads', function (err,files) {
     var f = [];
-    files.forEach((v,i)=>{
+    console.log(files);
+    files.forEach(function(v,i){
       if(fs.lstatSync('uploads/'+v).isDirectory()){
         f.push(v);
       } 
     });
     var callback =function(users) { 
-        res.render('users', {users:users}) 
+      res.render('users', {users:users}) 
     };
     firebase.getUsers(callback);
   })
