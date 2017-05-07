@@ -19,7 +19,7 @@ var pres =  function(req, res, next) {
       res.render('users', {users:users}) 
     };
     firebase.getUsers(callback);
-  // })
+
 };
 
 function getStars(req,res) {
