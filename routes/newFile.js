@@ -19,7 +19,6 @@ module.exports = function(app) {
       }
     };
     var html,css;
-    console.log(files.css);
     if(files.html.data) {html=files.html.data} else {html=""};
     if(files.css.data) {css=files.css.data} else {css=""};
     takePhoto(path+'prev.png',html,css,cb);

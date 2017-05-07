@@ -16,10 +16,10 @@ mixin badge(user,id)
       img(src=user.username+'prev.png')
     .infos
       ul
-        for v, info in user.infos
-          li #{v} : #{info}
+        for info,k in user.infos
+          li #{k} : #{info}
       if name != null
-        .stars(@mousemove="rate($event)" @click="go")
+        .stars(@mousemove="rate($event)" @click="go($event)")
           if name != user.username
             +stars
       else
@@ -32,8 +32,8 @@ block content
     | Les créations de tous 
     i.fa.fa-heart
   h2
-    | Si tu veux comment, inscris-toi 
-    i.fa.fa-heart
+    | Si tu veux juger, inscris-toi 
+    i.fa.fa-pencil
   ul.wrap
     each user in users
       if user.username == name

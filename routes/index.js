@@ -41,8 +41,20 @@ var logOut = function (req, res) {
   firebase.logOut().then(function () {
     req.session.logged = false;
     req.session.name = "stranger";
+    req.session.mail = null;
     res.redirect('back');
   });
+}
+
+var updateDB = function (req,res) {
+  console.log(req.body);
+  console.log(req.session.name);
+  console.log(req.session.mail);
+  var name = req.session.name;
+  var data = {};
+  data[req.body.work] = {stars : req.body.stars, by: name};
+  console.log(data);
+  firebase.updateDb(req.session.mail, "works", data);
 }
 
 
@@ -50,6 +62,7 @@ router.get('/upload', upload);
 router.get("/logOut", logOut);
 router.post('/signUp', create);
 router.post("/signIn", signIn);
+router.post("/rateWork", updateDB);
 
 
 // deprecated

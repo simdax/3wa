@@ -26,16 +26,27 @@ var globalAuth = function (app) {
   // console.log(app);
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      // app.locals.logged = true;
-      // app.locals.name = user.displayName;
       console.log("logged");
     } else {
-      // app.locals.logged = false;
-      // app.locals.name = "stranger";
       console.log("user unlogged");
     }
   })
 };
+
+// update db
+function updateDatabase(pass,key,json) {
+  firebase.auth().signInWithEmailAndPassword(pass, "pasdepass")
+  .then(function (user) {
+    console.log("on modifie");
+    firebase.database().ref(key).set(json)
+  },function (err) {
+    console.log("pb d'id : ", err);
+  })
+  .then(function () {
+    console.log("et on deconnecte ?");
+    firebase.auth().signOut()
+  })
+}
 
 
 //        __ __   __         __
@@ -50,6 +61,7 @@ var signIn = function(mail, req, res) {
   .then(function(user) {
     req.session.logged = true; 
     req.session.name = user.displayName; 
+    req.session.mail = mail; 
     console.log("signed in");
   },
   function(err) {
@@ -101,6 +113,7 @@ var create = function(nom, mail, res, req){
    sendMail(user);
    req.session.logged = true; 
    req.session.name = nom; 
+   req.session.mail = mail;
  }, function(err) {
    console.log("problème de création de user... "+err);
  })
@@ -123,7 +136,8 @@ module.exports={
 	update: update,
   getUsers: getUsers,
   globalAuth: globalAuth,
-  logOut: logOut
+  logOut: logOut,
+  updateDb: updateDatabase
 }
 
 }())
