@@ -28,7 +28,7 @@ module.exports = function(app) {
   app.post("/newFile", function(req, res){
     var name = req.session.name; 
     var folderName = "uploads/"+ name;
-    console.log(req.files);
+    fs.existsSync(folderName) || fs.mkdirSync(folderName);
     writeFiles(req.files, folderName, res);
     res.redirect("/users");
 })
