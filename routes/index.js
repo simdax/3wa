@@ -51,10 +51,9 @@ var updateDB = function (req,res) {
   console.log(req.session.name);
   console.log(req.session.mail);
   var name = req.session.name;
-  var data = {};
-  data[req.body.work] = {stars : req.body.stars, by: name};
+  var data = {stars : req.body.stars, time: new Date()};
   console.log(data);
-  firebase.updateDb(req.session.mail, "works", data);
+  firebase.updateDb(req.session.mail, "works/"+req.body.work+"/by-"+name, data);
 }
 
 

@@ -130,6 +130,12 @@ var getUsers = function (cb) {
   })
 };
 
+var getStars= function(cb){
+  return user.database().ref('works/').once('value',function(sn) {
+    console.log(sn);
+  })
+}
+
 module.exports={
 	signIn: signIn,
 	create: create,
@@ -137,7 +143,8 @@ module.exports={
   getUsers: getUsers,
   globalAuth: globalAuth,
   logOut: logOut,
-  updateDb: updateDatabase
+  updateDb: updateDatabase,
+  getStars: getStars
 }
 
 }())

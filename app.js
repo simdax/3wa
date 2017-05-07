@@ -40,7 +40,7 @@ firebase.globalAuth(app);
 
 app.use(function (req,res,next) {
   // if debug
-  console.log("session =  ",req.session);  
+//  console.log("session =  ",req.session);  
   res.locals = req.session;
   next();
 })

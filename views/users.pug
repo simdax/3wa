@@ -9,8 +9,8 @@ mixin stars()
       i.fa.fa-star-o
     - n--
 
-mixin badge(user,id)
-  li.sitesBadge(id=id)
+mixin badge(user,id,i)
+  li.siteBadges
     a(href="/users/"+user.username).image
       p= user.username
       img(src=user.username+'prev.png')
@@ -19,7 +19,7 @@ mixin badge(user,id)
         for info,k in user.infos
           li #{k} : #{info}
       if name != null
-        .stars(@mousemove="rate($event)" @click="go($event)")
+        div(class="stars" id="id"+i @mousemove="rate($event)" @click="go($event)")
           if name != user.username
             +stars
       else
@@ -35,10 +35,12 @@ block content
     | Si tu veux juger, inscris-toi 
     i.fa.fa-pencil
   ul.wrap
-    each user in users
+    each user,i in users
       if user.username == name
         +badge(user,"moi")
-        script
-          include:coffee-script javascripts/stars.coffee
       else
-        +badge(user,"autres")
+        +badge(user,"autres",i)
+  script
+    include:coffee-script javascripts/stars.coffee
+
+
