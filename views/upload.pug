@@ -2,14 +2,14 @@ extends layout
 
 block content
   include forms
-  if name != "stranger"
+  if name != null
     +fileTransfert
   #intro
-    h1 OK, #{name}
-    if name == "stranger"
+    if name == null
       :markdown-it
         Déjà, mon grand, il va falloir que t'apprennes qu'ici, on commence par se présenter, et là où qu'on se présente, c'est à l'entrée, là où on s'essuie les pieds, et en l'occurence, lève un peu les yeux.
     else
+      h1 OK, #{name}
       a(href="/defis") DEFIS FOUFOUS !
       :markdown-it
         Alors, il paraîtrait que tu voudrais écrire du gros code pour les copéins?

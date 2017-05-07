@@ -14,27 +14,7 @@ var pres =  function(req, res, next) {
       } 
     });
     var callback =function(users) { 
-      // var stars={};
-      // if(req.session.logged){
-      //   fb.auth().signInWithEmailAndPassword(req.session.mail,'pasdepass').then(function (user) {
-      //     var query = fb.database().ref('works/')
-      //     .once('value',function(sn) {
-      //       var query = sn.val();
-      //       for(k in query){
-      //         var el = query[k];
-      //         var vote = el["by-"+req.session.name];
-      //         if(vote){
-      //           stars[k] = vote.stars;
-      //          }
-      //       };
-      //       console.log(stars);
-      //       res.render('users', {users:users, stars:stars}) 
-      //     })
-      //   })
-      // }
-      // else{
         res.render('users', {users:users}) 
-      // };
     };
     firebase.getUsers(callback);
   })
@@ -43,7 +23,6 @@ var pres =  function(req, res, next) {
 function getStars(req,res) {
   var stars={};
   if(req.session.logged){
-    console.log('io');
     fb.auth().signInWithEmailAndPassword(req.session.mail,'pasdepass').then(function (user) {
       var query = fb.database().ref('works/')
       .once('value',function(sn) {
@@ -55,7 +34,6 @@ function getStars(req,res) {
             stars[k] = vote.stars;
            }
         };
-        console.log(stars);
         res.send(stars)
       })
     },function (er) {

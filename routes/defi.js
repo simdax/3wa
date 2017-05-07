@@ -7,10 +7,14 @@ router.get('/', function (req,res,next) {
     var f = [];
     for (var i = files.length - 1; i >= 0; i--) {
       var el = files[i];
-      if(el != 'main.pug' && el != 'layout.pug'){
-        f.push(el.slice(0,-4))
-      };
-    }
+      var reg=/pug$/;
+      if ( el.match(reg) ) { 
+        if(el != 'main.pug' && el != 'layout.pug'){
+          console.log(el);
+          f.push(el.slice(0,-4))
+        };
+      }
+    };
     res.render('consignes/main',{files:f});
   })
 })

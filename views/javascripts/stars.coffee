@@ -1,6 +1,5 @@
 
 vue = (id) ->
-  console.log id
   new Vue
     el: '#'+id
     data:

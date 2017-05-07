@@ -18,16 +18,17 @@ module.exports = function(app) {
         });
       }
     };
+    console.log("taking picture");
     var html,css;
-    if(files.html.data) {html=files.html.data} else {html=""};
-    if(files.css.data) {css=files.css.data} else {css=""};
+    if(files.html) {html=files.html.data} else {html=""};
+    if(files.css) {css=files.css.data} else {css=""};
     takePhoto(path+'prev.png',html,css,cb);
   }
 
   app.post("/newFile", function(req, res){
     var name = req.session.name; 
     var folderName = "uploads/"+ name;
-  // crade mais efficace :)
+    console.log(req.files);
     writeFiles(req.files, folderName, res);
     res.redirect("/users");
 })

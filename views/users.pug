@@ -13,7 +13,7 @@ mixin badge(user,id,i)
   li.siteBadges
     a(href="/users/"+user.username).image
       p= user.username
-      img(src=user.username+'prev.png')
+      img(src=user.username+'prev.png', alt="pas de preview")
     .infos
       ul
         for info,k in user.infos

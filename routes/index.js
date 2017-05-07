@@ -35,6 +35,7 @@ var signIn =  function (req,res) {
   promise.then(back);
 }
 var upload = function (req,res) {
+  console.log(req.session);
   res.render("upload")
 };
 var logOut = function (req, res) {
