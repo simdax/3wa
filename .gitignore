@@ -2,4 +2,3 @@
 public/vendor
 node_modules
 yarn.lock
-uploads/*
