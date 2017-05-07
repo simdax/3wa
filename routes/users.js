@@ -6,6 +6,7 @@ var firebase = require('./firebase');
 var fb = require('firebase');
 
 var pres =  function(req, res, next) {
+  fs.existsSync('uploads') || fs.mkdirSync('uploads') ;
   fs.readdir('uploads', function (err,files) {
     var f = [];
     console.log(files);
