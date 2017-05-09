@@ -17,9 +17,10 @@ var create = function(req, res) {
   var mail =  req.body.mail;
   var promise = firebase.create(nom,mail,res,req);
   dir = "uploads/"+nom;
+  fs.existsSync("uploads") || fs.mkdirSync("uploads");
   console.log(fs.existsSync("uploads"));
   fs.existsSync(dir) || fs.mkdirSync(dir);
-  // fs.writeFileSync(dir+"/index.html",template);
+  fs.writeFileSync(dir+"/index.html",template);
   takePicture(dir+"prev.png",template,"");
   var back= function(){res.redirect('back')};
   promise.then(back);
