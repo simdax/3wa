@@ -78,7 +78,7 @@ function writeUserData(userid,name,email,imageUrl) {
     userId: userid,
     username: name,
     email: email,
-    infos: { niveau : "pourri"}
+    infos: { victoires : 0}
   })
 };
 

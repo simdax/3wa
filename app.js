@@ -58,10 +58,13 @@ app.use("/users",express.static(path.join(__dirname, 'uploads')));
 require("./routes/newFile.js")(app);
 var index = require('./routes/index');
 var users = require('./routes/users');
-var defis = require("./routes/defi")
+var defis = require("./routes/defi");
+var upload = require("./routes/upload");
 app.use('/', index);
 app.use("/users", users);
 app.use("/defis", defis);
+app.use('/upload', upload);
+
 
 
 

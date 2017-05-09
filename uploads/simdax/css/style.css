@@ -1,0 +1,69 @@
+h2 {
+	font-size: 40px;
+	color: green;
+}
+
+}
+
+body {
+
+	background-color: #ff751a;
+}
+
+/*
+.red {
+	
+	color: red;
+}
+
+.green {
+
+	color:green;
+}
+
+.bleu {
+	color: blue;
+}
+
+div.pcolor {
+	background-color: gray;
+}
+
+div.bkcolor {
+
+	background-color: olive;
+}
+*/
+
+#bkcolor .green {
+	color:red;
+}
+
+#bkcolor >.red {
+	color:red;
+}
+
+#bkcolor article .red{
+	color: purple;
+}
+
+.pcolor h3 {
+	font-family: Arial, sans-serif
+}
+
+span {
+	font-family: Verdana;
+	color: red;
+	display: block;
+}
+.pcolor {
+	font-family: Monospace, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.underline{
+	text-decoration: underline;
+}

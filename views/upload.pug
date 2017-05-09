@@ -1,44 +1,17 @@
 extends layout
 
 block content
-  include forms
-  if name != null
-    +fileTransfert
   #intro
     if name == null
       :markdown-it
-        Déjà, mon grand, il va falloir que t'apprennes qu'ici, on commence par se présenter, et là où qu'on se présente, c'est à l'entrée, là où on s'essuie les pieds, et en l'occurence, lève un peu les yeux.
+        Inscris-toi pour pouvoir uploader des fichiers
     else
       h1 OK, #{name}
-      a(href="/defis") DEFIS FOUFOUS !
       :markdown-it
-        Alors, il paraîtrait que tu voudrais écrire du gros code pour les copéins?
-
-        C'est bien, ça, les copéins...
-
-        Bon, alors, c'est pas troooooooop, trop compliqué.
-        On n'a que trois règles dans le métier, et on commence par la fin.
-
-        ## règle n°3 :
-          Chez nous, on est pas des p'tites Sissi à se faire faire des liens tout chauds tout flammes dans ce [genre-là](//codepen.io). Chez nous, on fait tout à la main, à la dur, on souffre et on aime. Donc, tous les "links", et autres "script" bidule machin chose, on les fait, comme dans la vraie vie. D'où la deuxième règle : 
-
-        ## règle n°2 :
-          Les noms, c'est nous qu'on décide.
-          Il paraîtrait qu'il faut faire des appels internes et tout un tas de trucs très complexes que moi je maîtrise évidemment, tu penses, quarante ans de métier, et tout ça il faut que ça ait des noms cohérents et tout, tu vois, sinon, c'est le chaos, et nous, on n'aime pas trop les chaotiques dans la région...
-          Du coup, on a décidé, après moult et moult, que tes fichiers tu dois les appeller comme suit :
-
-          + ton C S S, il *doit* s'appeler __style__
-          + et ton J S, il *va s'appeler* __main__ !
-          + et ton H T M L, on s'en __bat les yakaris__, compris ??
-
-          Si tu respectes pas ça, fiston, et bien, tu peux passer directement à la golden rule suivaaaante
-
-        ## règle n°1 :
-          Si ça marche pas, ça marche pas...
-          Tu pourras t'en prendre qu'à toi-même !
-
-        Mais si t'acceptes ça, fiston, on peut discuter. Alors, balance tes fichiers d'amour dans le chtio panel en bas de page qu'on a t'a concocté, moi et mes copéins à moi, et va directement sur ta belle papage pour voir al résult.
-
-        Si t'en es pas content, tu pourras la modifier comme un guedin en revenant ici, et en réuploadant des fichiers.
-
-        Après, pour te faire connaître, ta pub et tout, c'est pas les restos du coeur ici, oké? Tu te débrouilles, tu vas sur la slack, tu blablates IRL comme disent les jeunes, et tout le toutim, hein... 
+        Plusieurs possibilités s'ouvrent à toi mon grand.
+        * Si tu utilises Safari, ou un autre navigateur un peu vieux, tu ne peux uploader les fichiers qu'un par un.
+          
+        * Si tu utilises Chrome ou Firefox dans une version suffisament récente, tu peux uploader entièrement un dossier
+  include forms
+  if name != null
+    +fileTransfert

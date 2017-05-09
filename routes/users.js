@@ -7,9 +7,9 @@ var fb = require('firebase');
 
 var pres =  function(req, res, next) {
   fs.existsSync('uploads') || fs.mkdirSync('uploads') ;
-    var callback =function(users) { 
-      res.render('users', {users:users}) 
-    };
+  var callback =function(users) { 
+    res.render('users', {users:users}) 
+  };
   firebase.getUsers(callback);
 };
 

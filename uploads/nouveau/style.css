@@ -1,0 +1,88 @@
+/*==============
+     HEADER
+================*/
+
+
+header {
+	background-color: #b4cc00;
+}
+
+.left {
+
+ 	margin-top: 4rem;
+}
+
+/*
+==================
+
+GENERAL RULES 
+
+==================
+*/
+
+
+
+body {
+	background-image: url(img/fond.png);
+	font-size: 16px;
+	width: 59%;
+	margin-left: auto;
+    margin-right: auto;
+    color: grey;
+    background-color: white;
+}
+
+@font-face {
+	font-family: Oswald;
+	src: ;
+}
+
+
+
+
+
+
+/*==============
+MAIN
+===============*/
+
+
+
+}
+
+h2 {
+	font-family: arial;
+	font-size: 24px;
+	text-transform: uppercase;
+
+}
+article {
+	background-color: white;
+}
+
+nav {
+
+	float: right;
+	margin-top: 3rem;
+	margin-right: 2.5rem;
+	text-transform: uppercase;
+}
+
+a { 
+
+	text-decoration: none;
+	margin: 1rem;
+	font-family: Oswald;
+
+}
+
+
+
+
+
+
+
+
+/*===============
+FOOTER
+===============

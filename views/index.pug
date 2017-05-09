@@ -3,66 +3,19 @@ extends layout
 block content  
   #background1.fond
   #filtre.fond
-  .container
     #titre
       p.
         "Alors, il paraît que tu veux poutrer du gros internet avec des gros hipsters réunis dans le 18eme arrondissement ?"
       img(src="img/chuckNorris.png")
-    figure
-      img(src='http://www.deedeeparis.com/blog/wp-content/uploads/2015/05/brasserie-Barb%C3%A8s-7.jpg')
-      figcaption.badge Le monde merveilleux des hipsters
-    .voixPeuple
-      | Mais c'est si dur, internet !!
-      br
-      | En serais-je seulement capable un jour ?
-    #iframes
-      img(src="img/marine.gif")
-      img(src="img/macroune.gif")
-    h3 Casse l'âne tienne, Philomène !
-    //p.
-      La 3WA te permet de partager tes peines, tes douleurs, et tes désirs !
-    //#list
-      ul
-        ul
-          li Le design
-          li (ce site, par exemple)
-        ul
-          li Le code
-          li Les codes
-          li (qui est, à n'en point douter, du meilleur goût)
-          li La vie
-        ul 
-          li Les copéins
-          li: small (ça, oublie, on pourra rien faire pour toi)
-    big.
-      Le monde merveilleux des entreprises mi de droite, mi de gauche, te présente le dernier-né des outils collaboratifs les plus oufs du monde :
-    #svg
-      p: a(href="https://3wa-paris.slack.com") BAM
-      img(src="https://cdn.worldvectorlogo.com/logos/slack-1.svg")
-    .voixPeuple
-      | Trop IZI en fait!
-    p.
-      Mais attention !!!!
-    p 
-      | Le succès de cet outil si apolitique en ces temps si troubles ne dépend :
-      #color
-        | que de 
-        a(href="https://fr.wikipedia.org/wiki/Moi_(psychanalyse)") toi 
-        |.
-    p Il va falloir :
-    ul
-      li le feeder
-      li le remplir
-      li le nourrir
-      li mettre des trucs dedans
-      li croire en toi-même
-    #zootopia
-      img(src="http://filmonic.com/wp-content/uploads/2016/01/Zootopia-fear-hop-fox.jpg")
-      p
-        | et si tu veux prouver ta haulte valure, ose suivre ce 
-        | =>
-        a(href="upload") lien de ouf
-        | <=
-  
-  script(src="http://css-tricks.com/examples/BlurredText/js/jquery.lettering.js")
-  script(src="javascripts/index.js")
+    b-card#intro
+      :markdown-it
+        # Coding Challenges
+        ## C'est quoi, un kodine tchallainege ?
+          C'est un défi lancé à la face du monde, à laquel toute personne inscrite à la 3WA est suissement conviée :
+
+          * Checke le [défi de la semaine](defis)
+          * [Upload](upload) un projet
+          * [Élis](users) le meilleur projet (à part le tien, un peu de gentlemanerie)
+    script.
+      new Vue({el:"#intro"})
+

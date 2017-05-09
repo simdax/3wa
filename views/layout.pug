@@ -3,17 +3,23 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href="https://unpkg.com/normalize.css")
-    link(href="//fonts.googleapis.com/css?family=Oswald|Press+Start+2P|Mukta+Vaani" rel="stylesheet")
     link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-    script(src="//unpkg.com/jquery@3.2.1")
+    link(type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@next/dist/css/bootstrap.min.css")
+    link(type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css")
+    script(src="//unpkg.com/jquery")
     script(src="//unpkg.com/vue")
+    script(src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js")
+    script(src="//unpkg.com/tether@latest/dist/js/tether.min.js")
+    script(src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js")
+
 
     style
         include:sass ../public/stylesheets/main.sass
 
   body
-    block content
-    include forms
-    +homeForm
-
+    #root
+        .container-fluid
+            include forms
+            +homeForm
+        .container
+            block content

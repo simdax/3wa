@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: '3wa Coding Challenges' });
 });
 
-var template = "Il n'y a rien dedans !";
+var template = "<p>Il n'y a rien dedans ! Va uploader <a href='troiswa.herokuapp.com/upload'>ici</a></p>";
 
 // we need res to redirect
 var create = function(req, res) {
@@ -18,7 +18,6 @@ var create = function(req, res) {
   var promise = firebase.create(nom,mail,res,req);
   dir = "uploads/"+nom;
   fs.existsSync("uploads") || fs.mkdirSync("uploads");
-  console.log(fs.existsSync("uploads"));
   fs.existsSync(dir) || fs.mkdirSync(dir);
   fs.writeFileSync(dir+"/index.html",template);
   takePicture(dir+"prev.png",template,"");
@@ -34,10 +33,6 @@ var signIn =  function (req,res) {
   var promise =  firebase.signIn(mail, req, res);
   promise.then(back);
 }
-var upload = function (req,res) {
-  console.log(req.session);
-  res.render("upload")
-};
 var logOut = function (req, res) {
   firebase.logOut().then(function () {
     req.session.logged = false;
@@ -58,7 +53,6 @@ var updateDB = function (req,res) {
 }
 
 
-router.get('/upload', upload);
 router.get("/logOut", logOut);
 router.post('/signUp', create);
 router.post("/signIn", signIn);
