@@ -19,9 +19,7 @@ var create = function(req, res) {
   dir = "uploads/"+nom;
   console.log(fs.existsSync("uploads"));
   fs.existsSync(dir) || fs.mkdirSync(dir);
-  fs.writeFileSync(dir+"/index.html",template,function(err) {
-    console.log(err);
-  });
+  // fs.writeFileSync(dir+"/index.html",template);
   takePicture(dir+"prev.png",template,"");
   var back= function(){res.redirect('back')};
   promise.then(back);
