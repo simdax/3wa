@@ -19,7 +19,7 @@ var create = function(req, res) {
   var promise = firebase.create(nom,mail,res,req);
   dir = "uploads/"+nom;
   fs.existsSync(dir) || fs.mkdirSync(dir);
-  fs.writeFile(dir+"/index.html",template,function(err) {
+  fs.writeFileSync(dir+"/index.html",template,function(err) {
     console.log(err);
   });
   takePicture(dir+"prev.png",template,"");

@@ -110,7 +110,7 @@ var update = function (user, nom) {
 var create = function(nom, mail, res, req){
   return firebase.auth().createUserWithEmailAndPassword(mail, "pasdepass").then(function(user) {
    update(user, nom);
-   sendMail(user);
+   // sendMail(user);
    req.session.logged = true; 
    req.session.name = nom; 
    req.session.mail = mail;
