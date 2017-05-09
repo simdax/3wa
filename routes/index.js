@@ -13,16 +13,17 @@ var template = "Il n'y a rien dedans !";
 
 // we need res to redirect
 var create = function(req, res) {
-  var back= function(){res.redirect('back')};
   var nom  =  req.body.nom;
   var mail =  req.body.mail;
   var promise = firebase.create(nom,mail,res,req);
   dir = "uploads/"+nom;
+  console.log(fs.existsSync("uploads"));
   fs.existsSync(dir) || fs.mkdirSync(dir);
   fs.writeFileSync(dir+"/index.html",template,function(err) {
     console.log(err);
   });
   takePicture(dir+"prev.png",template,"");
+  var back= function(){res.redirect('back')};
   promise.then(back);
 };
 // we use req to store cookies
