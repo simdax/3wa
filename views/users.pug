@@ -1,19 +1,29 @@
 extends layout
 
-mixin stars()
-  - var n = 3
-  while n > 0
-    if name != null
-      i.fa.fa-star(:style='{ opacity: opacity}')
-    else
-      i.fa.fa-star-o
-    - n--
+block content
+  h1 
+    | Les créations de tous 
+    i.fa.fa-heart
+  if !logged
+    h2  
+      | Si tu veux juger, inscris-toi 
+      i.fa.fa-pencil
+  ul.wrap
+    each user,i in users
+      if user.username == name
+        +badge(user,"moi")
+      else
+        +badge(user,"autres",i)
+  script(src="../javascripts/stars.js")
 
 mixin badge(user,id,i)
-  li.siteBadges
+  li.siteBadges(id=id)
     a(href="/users/"+user.username).image
-      p= user.username
-      img(src=user.username+'prev.png', alt="pas de preview")
+      if(user.username == name)
+        p TOI
+      else
+        p= user.username
+      img(src=user.username+'prev.png', alt="pas de preview" onerror="this.src='../img/notFound.jpg'")
     .infos
       ul
         for info,k in user.infos
@@ -23,24 +33,14 @@ mixin badge(user,id,i)
           if name != user.username
             +stars
       else
-        .stars-plouc
+        .stars-plouc(style='{background-color:orange}')
           +stars
 
-
-block content
-  h1 
-    | Les créations de tous 
-    i.fa.fa-heart
-  h2
-    | Si tu veux juger, inscris-toi 
-    i.fa.fa-pencil
-  ul.wrap
-    each user,i in users
-      if user.username == name
-        +badge(user,"moi")
-      else
-        +badge(user,"autres",i)
-  script
-    include:coffee-script javascripts/stars.coffee
-
-
+mixin stars()
+  - var n = 3
+  while n > 0
+    if name != null 
+      i.fa.fa-star(:style='{ opacity: opacity}')
+    else
+      i.fa.fa-star-o
+    - n--

@@ -1,5 +1,0 @@
-ref: refs/remotes/origin/master
-00000000 51c1df3dca15d4cecb62e6d7e0a006872ebbaf10 wabap35 <wabap35@wabap35.(none)> 1490772998 +0200	clone: from http://www.github.com/simdax/2049
-51c1df3dca15d4cecb62e6d7e0a006872ebbaf10 82b3763ede9662ce8cd68f2e1d5aa867da216aeb simdax <simoncornaz@gmail.com> 1490781241 +0200	commit: add color diags
-82b3763ede9662ce8cd68f2e1d5aa867da216aeb 15db992f00e9238fb660886445b2d6f2a3fa3e3c simdax <simoncornaz@gmail.com> 1490782126 +0200	commit: add rules for fill
-15db992f00e9238fb660886445b2d6f2a3fa3e3c 3d210177916f756469a7a6da66424faa05e47b03 simdax <simoncornaz@gmail.com> 1490972770 +0200	commit: colors best

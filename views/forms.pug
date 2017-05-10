@@ -1,73 +1,72 @@
 
 
 mixin alreadyLogged(name)
-  b-navbar#menu(toggleable type="inverse")
+  b-navbar#menu(type="inverse")
     b-nav-toggle(target="nav")
     b-link.navbar-brand(href='/') salut #{name}
     b-collapse#nav(is-nav)
-      b-nav.ml-auto(is-nav-bar)
-        b-nav-item-dropdown(right-alignment)
-          b-dropdown-item(href="/defis" )  voir les defis
-          b-dropdown-item(href="/users" )  see users
-          b-dropdown-item(href="/upload") upload a file
-          b-dropdown-item(href="/logOut") log out
+      b-nav(is-nav-bar)
+        b-nav-item(href="/defis" )  voir les defis
+        b-nav-item(href="/users" )  see users
+        b-nav-item(href="/upload") upload a file
+        b-nav-item(href="/logOut") log out
   script.
     new Vue({el:'#menu'})
 
 
 
-mixin homeForm(legend="inscris-toi mec, juste pour le plaisir de faire du firebase !",dejaInscrit=true)
-  .fixedDiv
+mixin homeForm(legend="signUp",dejaInscrit=true)
   if (!logged)
-    #auth
-      form(@submit.prevent="submit($event)" action="../signUp",method="post")
-        fieldset
-          legend= legend
+    b-tabs#tabs(pills)
+      b-tab(title="signUp" active)
+        form.form-group(@submit.prevent="submit($event)" action="../signUp",method="post")
           input(:style="style2" v-model="name" type="text" placeholder="ton nom" name="nom" required)
           input(title="prout" v-model="mail" type="mail" placeholder="ton mail" name="mail" required :style="style")
-          input(type="submit" value="Mais ouais !") 
-      if dejaInscrit
-        form(action="../signIn",method="post")
-          fieldset
-            legend Ou alors t'es déjà tellement inscrit, c'est chaud !
-            input(type="mail" placeholder="ton mail" name="mail" required)
-            input(type="submit" value="Mais ouais, encore plus !") 
+          input(type="submit") 
+      b-tab(title="signIn")
+        form.form-group(action="../signIn",method="post")
+          input(type="mail" placeholder="ton mail" name="mail" required)
+          input(type="submit") 
     script(src="javascripts/auth.js")
+    script(src="../javascripts/auth.js")
   else
     .alreadyLogged
       +alreadyLogged(name)
 
 
 mixin fileTransfert
-  .fixedDivBottom
-  form#dirUpload(action="upload/dir" method="post" enctype="multipart/form-data")
-    input#dir(type="file" name="dir" multiple webkitdirectory)
-    input(type="submit")
-  script.
-    var  output = [];
-    document.getElementById("dir").addEventListener("change", function(event) {
-      var  files = event.target.files;
-      for (var  i=0; i<files.length; i++) {
-        var  item = files[i].webkitRelativePath;
-        output.push(item);
-      };
-      console.log(output);
-    }, false);  
-    document.getElementById("dirUpload").addEventListener("submit",function(ev){
-      ev.preventDefault();
-        var input = $("<input>").attr("type", "hidden").attr("name", "io").val(output);
-        $(ev.target).append($(input));
-        ev.target.submit()
-    })
-
   #uploadForm
-    form(action="newFile", method="post", enctype="multipart/form-data")
-      #buttons
-        label(for="html") HTML
-        input(type="file", id="html", name="html")
-        label(for="css") CSS
-        input(type="file", id="css", name="css")
-        label(for="js") JAVASCRIPT
-        input(type="file", id="js", name="js")
-      #ok
-        input(type="submit" value="vazi, fiston, c'est ton heure de gloire !")
+    form.form-group#dirUpload(action="upload/dir" method="post" enctype="multipart/form-data")
+      .input-group
+        .input-group-addon
+          span.button-secondary DIRECTORY
+        input#dir.form-control(type="file" name="dir" multiple webkitdirectory)
+        input.btn(type="submit" value="upload")
+    script.
+      var  output = [];
+      document.getElementById("dir").addEventListener("change", function(event) {
+        var  files = event.target.files;
+        for (var  i=0; i<files.length; i++) {
+          var  item = files[i].webkitRelativePath;
+          output.push(item);
+        };
+        console.log(output);
+      }, false);  
+      document.getElementById("dirUpload").addEventListener("submit",function(ev){
+        ev.preventDefault();
+          var input = $("<input>").attr("type", "hidden").attr("name", "io").val(output);
+          $(ev.target).append($(input));
+          ev.target.submit()
+      })
+    form.form-group(action="newFile", method="post", enctype="multipart/form-data")
+      #buttons.input-group(data-toggle="buttons")
+        .input-group-addon
+          span.button-secondary HTML
+        input.form-control(type="file", name="html")
+        .input-group-addon
+          span.button-secondary CSS
+        input.form-control(type="file",  name="css")
+        .input-group-addon
+          span.button-secondary JAVASCRIPT
+        input.form-control(type="file", name="js")
+        input.btn(type="submit" value="upload")

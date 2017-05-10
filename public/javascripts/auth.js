@@ -1,5 +1,5 @@
 new Vue({
-  el:"form[action='../signUp']",
+  el:"#tabs",
   data:{
     name:"",
     mail:"",
@@ -27,3 +27,4 @@ new Vue({
     }
   }
 })
+

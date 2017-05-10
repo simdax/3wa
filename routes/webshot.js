@@ -26,6 +26,10 @@ var renderUrl = function (path,html,css,cb) {
 //   file.write(data.toString('binary'), 'binary');
 // });
 
+var renderUrl = function(){
+	path.slice(0,-8)
+}
+
 module.exports = renderUrl;
 		
 }())

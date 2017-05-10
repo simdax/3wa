@@ -36,7 +36,7 @@ var signIn =  function (req,res) {
 var logOut = function (req, res) {
   firebase.logOut().then(function () {
     req.session.logged = false;
-    req.session.name = "stranger";
+    req.session.name = null;
     req.session.mail = null;
     res.redirect('back');
   });
