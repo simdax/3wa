@@ -2,39 +2,19 @@ module.exports = function(app) {
 
   var fs = require('fs');
   var takePhoto = require('./webshot.js');
-  var mkdirp = require('mkdirp')
-  // function createTreeSync(path){
-  //   var dirs=path.split('/'); 
-  //   dirs.forEach(function(v,i){
-  //     var path=[];
-  //     for (var j = 0; j <= i ; j++) {
-  //       path.push(dirs[j]) 
-  //     };
-  //     fs.existsSync(path.join("/")) || fs.mkdirSync(path.join("/"))
-  //   })
-  // };
+  var mkdirp = require('mkdirp');
 
   function writeFiles(files,path,tree) {
-    if(tree){
-      // create tree
-      // var root = "";
-      // for(k in tree) {
-      //   var file = k; 
-      //   root = tree[k].substring(0,tree[k].indexOf("/"));
-      //   var p = tree[k].replace(root, path);
-      //   createTreeSync(p);
-      //   // fs.writeFile(p, file.data, function (err) {
-      //   //   if(err){console.log("error :" + err);}
-      //   // });
-      // };
+    if(tree){ 
       files.dir.forEach(function (file) {
         var p=tree[file.name];
-        console.log(p);
         mkdirp.sync(p);
         fs.writeFile(p+file.name, file.data, function (err) {
           if(err){console.log("error :" + err);}
         });
       });
+      console.log("taking picture");
+      takePhoto(path);
     }
     else{      
       for (k in files) {

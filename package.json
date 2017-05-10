@@ -7,7 +7,6 @@
     "watch": "nodemon --ignore 'uploads/*' & browser-sync start --proxy 'localhost:3000/' --port 3001 --ss 'uploads' -f 'views/*' 'public/stylesheets/*' 'public/javascripts/*' 'uploads/style.css'"
   },
   "dependencies": {
-    // "babel-loader": "^7.0.0",
     "body-parser": "~1.17.1",
     "browser-sync": "^2.18.8",
     "cookie-parser": "~1.4.3",
@@ -23,9 +22,9 @@
     "jstransformer-sass": "^0.1.1",
     "mkdirp": "^0.5.1",
     "morgan": "~1.8.1",
-    // "pageres": "^4.4.0",
     "pug": "~2.0.0-beta11",
     "rimraf": "^2.6.1",
+    "sendmail": "^1.1.1",
     "serve-favicon": "~2.4.2",
     "webshot": "^0.18.0"
   }
