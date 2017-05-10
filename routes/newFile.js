@@ -11,10 +11,10 @@ module.exports = function(app) {
         mkdirp.sync(p);
         fs.writeFile(p+file.name, file.data, function (err) {
           if(err){console.log("error :" + err);}
+          console.log("taking picture");
+          takePhoto(path);
         });
       });
-      console.log("taking picture");
-      takePhoto(path);
     }
     else{      
       for (k in files) {
@@ -23,14 +23,14 @@ module.exports = function(app) {
           var p = path+"/"+files[k].name;
           fs.writeFile(p, files[k].data, function (err) {
             if(err){console.log("error :" + err);}
+            console.log("taking picture");
+            var html,css;
+            if(files.html) {html=files.html.data} else {html=""};
+            if(files.css) {css=files.css.data} else {css=""};
+            takePhoto(path+'prev.png',html,css,cb);
           });
         }
       };
-      console.log("taking picture");
-      var html,css;
-      if(files.html) {html=files.html.data} else {html=""};
-      if(files.css) {css=files.css.data} else {css=""};
-      takePhoto(path+'prev.png',html,css,cb);
     }
   }
 
