@@ -20,7 +20,7 @@ var renderUrl = function (path,html,css) {
 			}
 		})
 	}else{
-			var p ="troiswa.herokuapp.com/users/"+path.slice(path.indexOf('/'));
+			var p ="troiswa.herokuapp.com/users"+path.slice(path.indexOf('/'));
 			console.log(p);
 			var renderStream = webshot(p, path+'prev.png' ,options,function(err){
 				if(err){console.log("error while taking photo':"+err)}
