@@ -1,21 +1,19 @@
 extends layout
 
 block content  
-  #background1.fond
-  #filtre.fond
-    #titre
-      p.
-        "Alors, il paraît que tu veux poutrer du gros internet avec des gros hipsters réunis dans le 18eme arrondissement ?"
-      img(src="img/chuckNorris.png")
-    b-card#intro
-      :markdown-it
-        # Coding Challenges
-        ## C'est quoi, un kodine tchallainege ?
-          C'est un défi lancé à la face du monde, à laquel toute personne inscrite à la 3WA est suissement conviée :
+  #titre
+    p.
+      "Alors, il paraît que tu veux poutrer du gros internet avec des gros hipsters réunis dans le 18eme arrondissement ?"
+    img(src="img/chuckNorris.png")
+  b-card#intro
+    :markdown-it
+      # Coding Challenges
+      ## C'est quoi, un kodine tchallainege ?
+        C'est un défi lancé à la face du monde, à laquel toute personne inscrite à la 3WA est suissement conviée :
 
-          * Checke le [défi de la semaine](defis)
-          * [Upload](upload) un projet
-          * [Élis](users) le meilleur projet (à part le tien, un peu de gentlemanerie)
-    script.
-      new Vue({el:"#intro"})
+        * Checke le [défi de la semaine](defis)
+        * [Upload](upload) un projet
+        * [Élis](users) le meilleur projet (à part le tien, un peu de gentlemanerie)
+  script.
+    new Vue({el:"#intro"})
 
