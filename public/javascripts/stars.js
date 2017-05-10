@@ -4,7 +4,7 @@ vue = function(id) {
   return new Vue({
     el: '#' + id,
     data: {
-      nb: 3,
+      nb: 5,
       locked: true,
       stars: 0
     },
